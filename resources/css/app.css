@@ -1,0 +1,10 @@
+.login-container {
+    display: flex;
+    background-color: blue;
+    border-radius: 1rem;
+    border: black 1px solid;
+}
+
+h1 {
+    font-size: 5rem;
+}
