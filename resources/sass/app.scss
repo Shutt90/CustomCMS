@@ -1,19 +1,27 @@
-.nav-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 50px;
+//color pallete
+
+$shade1: #d7eebc;
+$shade2: #b9eec5;
+$shade3: #9dddc8;
+$shade4: #98c5e1;
+$shade5: #a8a9e5;
+
+//fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+* {
+    font-style: 'Permanent Marker', cursive;
 }
 
-.login-container {
-    display: flex;
-    background-color: blue;
-    border-radius: 1rem;
-    border: black 1px solid;
-}
+//partials
 
-h1 {
-    font-size: 5rem;
-    color: red;
-}
+@import 'partials/header.scss';
+@import 'partials/login.scss';
+@import 'partials/register.scss';
+@import 'partials/footer.scss';
+
+
+
+
+
+

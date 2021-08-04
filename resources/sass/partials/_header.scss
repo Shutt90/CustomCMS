@@ -1,0 +1,16 @@
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    list-style: none;
+
+    a {
+        text-decoration: none;
+        transition: transform ease 0.5s;
+
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+}

@@ -2,11 +2,11 @@
 
 <body>
         @guest
-        <div class="register-container">
-            <h1>Register Page</h1>
+        <div class="register">
+            <h1 class="register-txt">Register Page</h1>
 
             <div class="register-form">
-                <form action="{{ route('register') }}" method="post">
+                <form class="register-form__table" action="{{ route('register') }}" method="post">
                     <label for="text">First Name</label>
                     <input type="text" name="fname" id="fname" placeholder="First Name" class="form-input">
                     </label>
