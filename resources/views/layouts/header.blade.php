@@ -5,5 +5,30 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title')</title>
-        <link href="{{ asset('css/app.css' )}}" rel=stylesheet">
+        <link href="{{ asset( '/css/app.css' )}}" rel=stylesheet">
     </head>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <a href="{{url('/')}}">
+                <li class="nav-item">Home</li>
+            </a>
+            <a href="{{url('login')}}">
+                <li class="nav-item">Login</li>
+            </a>
+            <a href="{{url('register')}}">
+                <li class="nav-item">Register</li>
+            </a>
+            <a href="{{url('dashboard')}}">
+                <li class="nav-item">Dashboard</li>
+            </a>
+            <a href="{{url('profile')}}">
+                <li class="nav-item">Profile</li>
+            </a>
+            <a href="{{url('logout')}}">
+                <li class="nav-item">Log Out</li>
+            </a>
+        </nav>
+
+
+            
