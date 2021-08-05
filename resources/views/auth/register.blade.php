@@ -7,6 +7,7 @@
 
             <div class="register-form">
                 <form class="register-form__table" action="{{ route('register') }}" method="post">
+                    @csrf
                     <label for="text">First Name</label>
                     <input type="text" name="fname" id="fname" placeholder="First Name" class="form-input">
                     </label>
