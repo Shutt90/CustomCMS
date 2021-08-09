@@ -1,4 +1,5 @@
 @include('layouts.header')
+@section('title', 'Register')
 
 @section('content')
 
