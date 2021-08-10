@@ -3,6 +3,12 @@
 
 @section('content')
 
+    @auth
+
+    @back()
+
+    @endauth
+
     @guest
     <div class="register">
         <h1 class="register-txt">Register Page</h1>
