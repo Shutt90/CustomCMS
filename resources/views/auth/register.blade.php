@@ -1,15 +1,8 @@
 @include('layouts.header')
 @section('title', 'Register')
 
-@section('content')
+<section class="content">
 
-    @auth
-
-    @back()
-
-    @endauth
-
-    @guest
     <div class="register">
         <h1 class="register-txt">Register Page</h1>
 
@@ -45,15 +38,6 @@
         </div>
     </div>
 
-    @endguest
-
-    @auth
-
-    @back()
-
-    @endauth
-
+</section>
 
 @include('layouts.footer')
-
-@endsection

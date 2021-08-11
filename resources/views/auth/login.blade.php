@@ -1,7 +1,7 @@
 @include('layouts.header')
 
+<section class="content">
 
-<body>
         @guest
         <div class="login">
             <h1 class="login-txt"> Login Page</h1>
@@ -25,6 +25,5 @@
 
         @endauth
 
-</body>
-
+</section>
 @include('layouts.footer')

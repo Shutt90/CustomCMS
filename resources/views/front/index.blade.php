@@ -1,9 +1,7 @@
 @include('layouts.header')
 @section('title', 'Home Page')
 
-@section('content')
-<section class="home">
-    <h1 class="home-title">Home Page<h1>
+<section class="content">
 
     <div class="home-nav">
         <ul class="home-nav__items">
@@ -37,10 +35,17 @@
     <div class="main">
         <h3 class="main-title">Home Page</h3>
 
+        <div class="main-images">
+            <img src="{{url('')}}/imgs/home/randimg.png">
+            <img src="{{url('')}}/imgs/home/randimg2.jpg">
+            <img src="{{url('')}}/imgs/home/randimg3.png">
+            <img src="{{url('')}}/imgs/home/randimg4.jpeg">
+            <img src="{{url('')}}/imgs/home/randimg5.jpg">
+        </div>
+
     </div>
 </section>
 
 
 
 @include('layouts.footer')
-@endsection

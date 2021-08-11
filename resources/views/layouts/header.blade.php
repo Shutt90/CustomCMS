@@ -10,7 +10,7 @@
 
     <nav class="nav">
         <ul class="nav-list">
-<!-- 
+
         @guest
             <a href="{{url('/')}}">
                 <li class="nav-item">Home</li>
@@ -22,7 +22,7 @@
                 <li class="nav-item">Register</li>
             </a>
 
-        @endguest -->
+        @endguest
 
         @auth
             <a href="{{url('dashboard')}}">

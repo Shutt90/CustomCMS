@@ -95,3 +95,33 @@ body {
   text-align: center;
   margin: 1rem;
 }
+
+.home-nav {
+  position: fixed;
+  left: 0px;
+  width: 100px;
+}
+.home-nav__items {
+  list-style: none;
+}
+.home-nav__items-list {
+  font-size: 1rem;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 3rem;
+}
+.main-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.main-images img {
+  height: 400px;
+  width: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 1rem;
+}

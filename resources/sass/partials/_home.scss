@@ -1,0 +1,37 @@
+.home-nav {
+    position: fixed;
+    left: 0px;
+    width: 100px;
+
+    &__items {
+        list-style: none;
+
+        &-list {
+            font-size: 1rem;
+        }
+    }
+}
+
+.main {
+    &-title {
+        text-align: center;
+        font-size: 3rem;
+
+    }
+
+    &-images {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+
+        img {
+            height: 400px;
+            width: 600px;
+            object-fit: cover;
+            margin: 1rem;
+
+        }
+
+    }
+}
