@@ -33,6 +33,11 @@
             </li>
         </ul>
     </div>
+
+    <div class="main">
+        <h3 class="main-title">Home Page</h3>
+
+    </div>
 </section>
 
 
