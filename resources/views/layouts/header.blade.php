@@ -40,8 +40,6 @@
 
         <body>
 
-        @section('content')
-
-        @endsection
+        @yield('content')
 
         </body>

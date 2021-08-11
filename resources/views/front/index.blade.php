@@ -1,39 +1,15 @@
-@include('layouts.header')
+@extends('layouts.header')
 @section('title', 'Home Page')
 
-<section class="content">
+@section('content')
 
-    <div class="home-nav">
-        <ul class="home-nav__items">
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-            <li class="home-nav__items-list">
-                <a href="{{route('home')}}">Home</a>
-            </li>
-        </ul>
-    </div>
+@include('layouts.sidenav')
 
     <div class="main">
-        <h3 class="main-title">Home Page</h3>
+        <div class="main-title">
+            <h3 class="main-title__txt">Photographer Name</h3>
+            <div class="main-title__underline"></div>
+        </div>
 
         <div class="main-images">
             <img src="{{url('')}}/imgs/home/randimg.png">
@@ -49,3 +25,4 @@
 
 
 @include('layouts.footer')
+@stop

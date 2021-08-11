@@ -1,4 +1,4 @@
-@include('layouts.header')
+@extends('layouts.header')
 @section('title', 'Dashboard')
 
 @section('content')
@@ -16,4 +16,4 @@
 
 @include('layouts.footer')
 
-@endsection
+@stop
