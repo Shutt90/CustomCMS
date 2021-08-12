@@ -6281,3 +6281,15 @@ body {
     text-shadow: 0 0 5px #fff, 0 0 7px #ff4da6, 0 0 10px #ff4da6, 0 0 12px #ff4da6, 0 0 13px #ff4da6, 0 0 15px #ff4da6, 0 0 16px #ff4da6;
   }
 }
+.dashboard {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard-screen {
+  width: 40%;
+  display: flex;
+  margin: 3rem;
+}
+.dashboard-screen canvas {
+  border: black 5px solid;
+}

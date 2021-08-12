@@ -21,12 +21,13 @@ $shade5: #a8a9e5;
 
 //partials
 
-@import 'partials/header.scss';
-@import 'partials/login.scss';
-@import 'partials/register.scss';
-@import 'partials/footer.scss';
-@import 'partials/home.scss';
+@import 'partials/header';
+@import 'partials/login';
+@import 'partials/register';
+@import 'partials/footer';
+@import 'partials/home';
 @import 'partials/sidenav';
+@import 'partials/dashboard';
 
 
 //responsive needs to be last

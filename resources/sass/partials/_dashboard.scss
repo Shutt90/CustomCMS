@@ -1,0 +1,18 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    
+
+    &-screen {
+        width: 40%;
+        display: flex;
+        margin: 3rem;
+
+        canvas {
+            border: black 5px solid;
+
+           
+        }
+
+    }
+}
