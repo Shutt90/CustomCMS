@@ -7,22 +7,22 @@
         <h1 class="register-txt">Register Page</h1>
 
         <div class="register-form">
-            <form class="register-form__table" action="{{ route('register') }}" method="post">
+            <form action="{{ route('register') }}" method="post" class="register-form__table">
                 @csrf
                 <label for="text">First Name</label>
-                <input type="text" name="fname" id="fname" placeholder="First Name" class="form-input">
+                <input type="text" name="fname" id="fname" value="{{ old('fname') }}" placeholder="First Name" class="form-input">
                 </label>
                 
                 <label for="text">Surname</label>
-                <input type="text" name="surname" id="surname" placeholder="Surname" class="form-input">
+                <input type="text" name="surname" id="surname" value="{{ old('surname') }}" placeholder="Surname" class="form-input">
                 </label>
                 
                 <label for="email">Username</label>
-                <input type="text" name="username" id="username" placeholder="Desired Username" class="form-input">
+                <input type="text" name="username" id="username" value="{{ old('username') }}" placeholder="Desired Username" class="form-input">
                 </label>
                 
                 <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" placeholder="Email Address" class="form-input">
+                <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email Address" class="form-input">
                 </label>
                 
                 <label for="password">Password</label>
@@ -30,10 +30,10 @@
                 </label>
 
                 <label for="email">Confirm Password</label>
-                <input type="password" name="password" id="password" placeholder="Password Again..." class="form-input">
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Password Again..." class="form-input">
                 </label>
 
-                <input type="submit" class="form-button">
+                <button type="submit" class="form-button">Register</button>
             </form>
         </div>
     </div>

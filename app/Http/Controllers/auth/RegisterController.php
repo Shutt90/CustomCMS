@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
+
     public function index()
     {
         return view('auth.register');
@@ -18,9 +23,9 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'fname' => 'required|max:25',
-            'surname' => 'required|max:40',
-            'username' => 'required|max:25',
+            'fname' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'username' => 'required|max:255',
             'email' => 'required|email|max:255',
             'password' => 'required|confirmed',
         ]);
