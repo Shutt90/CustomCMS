@@ -19,6 +19,10 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+        auth()->attempt($request->only('email', 'password'));
+
+        return redirect()->route('dahsboard');
+
     }
 
 }
