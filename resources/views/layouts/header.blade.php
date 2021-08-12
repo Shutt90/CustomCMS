@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title')</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+        <script defer src="/node_modules/font-awesome/js/brands.js"></script>
+        <script defer src="/node_modules/font-awesome/js/solid.js"></script>
+        <script defer src="/node_modules/font-awesome/js/fontawesome.js"></script>
     </head>
 
     <nav class="nav">
@@ -15,7 +18,7 @@
             <a href="{{url('/')}}">
                 <li class="nav-item">Home</li>
             </a>
-            <a href="{{url('login')}}">
+        <a href="{{url('login')}}">
                 <li class="nav-item">Login</li>
             </a>
             <a href="{{url('register')}}">

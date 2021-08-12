@@ -7,6 +7,7 @@
 
     <div class="main">
         <div class="main-title">
+
             <h3 class="main-title__txt">Photographer Name</h3>
             <div class="main-title__underline"></div>
         </div>

@@ -19,6 +19,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
         "font-awesome": "^4.7.0",
         "scss": "^0.2.4"
     }
