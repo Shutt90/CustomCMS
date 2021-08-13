@@ -1,10 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+//Auth Controllers
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\DashboardController;
+
+//Front Controllers
 use App\Http\Controllers\front\HomeController;
+
+//Admin controllers
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +34,5 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/content', [ContentController::class, 'index'])->name('content');

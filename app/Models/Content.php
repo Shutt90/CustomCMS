@@ -9,6 +9,6 @@ class Content extends Model
 {
     use HasFactory;
 
-    public $table = 'content';
+    public $table = 'contents';
 
 }
