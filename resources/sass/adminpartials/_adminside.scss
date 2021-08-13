@@ -1,5 +1,14 @@
 .ad-nav-list {
-    &__item {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: left;
 
+    &__item {
+        height: 5rem;
+        font-size: 2rem;
+        list-style: none;
+        background-color: $shade3;
+        
     }
 }

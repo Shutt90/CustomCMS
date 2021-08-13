@@ -29,6 +29,10 @@ $shade5: #a8a9e5;
 @import 'partials/sidenav';
 @import 'partials/dashboard';
 
+//admin partials
+
+@import 'adminpartials/adminside';
+
 
 //responsive needs to be last
 @import 'partials/responsive.scss'

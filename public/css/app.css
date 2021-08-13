@@ -6293,3 +6293,16 @@ body {
 .dashboard-screen canvas {
   border: black 5px solid;
 }
+
+.ad-nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+.ad-nav-list__item {
+  height: 5rem;
+  font-size: 2rem;
+  list-style: none;
+  background-color: #9dddc8;
+}
