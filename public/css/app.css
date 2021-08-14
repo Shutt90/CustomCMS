@@ -6299,10 +6299,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: left;
+  width: 15%;
 }
 .ad-nav-list__item {
   height: 5rem;
+  width: 70%;
   font-size: 2rem;
   list-style: none;
-  background-color: #9dddc8;
+  background-color: #b9eec5;
+  margin: 1rem;
+  border: #9dddc8 solid 2px;
 }
