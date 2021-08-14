@@ -36,3 +36,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/content', [ContentController::class, 'index'])->name('content');
+Route::get('/content/edit', [ContentController::class, 'index'])->name('content.edit');
+Route::post('/content/edit', [ContentController::class, 'index']);

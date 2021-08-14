@@ -11,8 +11,13 @@ class ContentController extends Controller
 {
     public function index()
     {
-        return view('admin.content', [
-            'content' => Content::where('id', '1')->get()
+        return view('admin.contents.index', [
+            'content' => Content::where('id', '1')->first()
         ]);
+    }
+
+    public function edit()
+    {
+        
     }
 }
