@@ -6310,3 +6310,63 @@ body {
   margin: 1rem;
   border: #9dddc8 solid 2px;
 }
+
+.image-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-container__success {
+  background-color: lightgreen;
+  height: 3rem;
+  font-size: 1.5rem;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: black 2px solid;
+}
+.image-container__error {
+  background-color: darkred;
+  height: 3rem;
+  font-size: 1.5rem;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: black 2px solid;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.image-file {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  justify-content: space-evenly;
+}
+.image-file__input {
+  height: 2rem;
+  font-size: 1rem;
+  font-family: "Courier New", Courier, monospace;
+}
+.image-file__label {
+  height: 2rem;
+  font-size: 1rem;
+  font-family: "Courier New", Courier, monospace;
+}
+.image-file__submit {
+  height: 2rem;
+  font-size: 1rem;
+  font-family: "Courier New", Courier, monospace;
+  margin-top: 2rem;
+}
