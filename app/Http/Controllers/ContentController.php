@@ -16,8 +16,10 @@ class ContentController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit($id)
     {
+
+
         
     }
 }
