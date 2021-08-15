@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('dahsboard');
+        return redirect()->route('dashboard');
 
     }
 

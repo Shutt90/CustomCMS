@@ -12,6 +12,7 @@ use App\Http\Controllers\front\HomeController;
 //Admin controllers
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FileUpload;
 
 
 /*
@@ -26,7 +27,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
+    
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'fetch']);
 
@@ -37,4 +38,11 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::get('/content', [ContentController::class, 'index'])->name('content');
 Route::get('/content/edit', [ContentController::class, 'index'])->name('content.edit');
-Route::post('/content/edit', [ContentController::class, 'index']);
+Route::post('/content/edit', [ContentController::class, 'edit']);
+
+Route::get('/admin/images', [GalleryController::class, 'index'])->name('gallery');
+// Route::resource('admin/images', [GalleryController::class, 'index']);
+Route::post('/admin/images', [GalleryController::class, 'store']);
+
+Route::get('/upload-file', [FileUpload::class, 'createForm']);
+Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
