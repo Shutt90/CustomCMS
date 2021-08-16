@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\File;
+use Illuminate\Support\Facades\Storage;
 
 class FileUpload extends Controller
 {
@@ -11,7 +12,9 @@ class FileUpload extends Controller
     {
 
         $images = File::orderBy('id', 'desc')->get();
+        $imagesStorage = Storage::disk('public')->get();
 
+        dd($imagesStorage);
 
         return view('admin.gallery.index', compact('images'));
 

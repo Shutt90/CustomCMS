@@ -12,7 +12,6 @@ class ContentController extends Controller
     
     public function index(Request $request)
     {
-        dd($request);
         return view('admin.contents.index', [
             'content' => Content::where('id', '1')->first()
         ]);

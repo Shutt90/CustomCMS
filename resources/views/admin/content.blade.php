@@ -15,7 +15,6 @@
         <li class="content-items__list">
             <a href="#">
                 Gallery
-                
             </a>
         </li>
         <li class="content-items__list">
