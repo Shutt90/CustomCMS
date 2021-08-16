@@ -1,6 +1,8 @@
 @extends('layouts.header')
 @section('title', 'Dashboard')
 
+@include('admin.layouts.adminside')
+
 @section('content')
 
 <body>

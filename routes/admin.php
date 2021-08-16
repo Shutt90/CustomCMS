@@ -11,8 +11,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 //Admin controllers
 Route::group(['middleware' => 'auth'], function() {
-
-
+    
     Route::get('/content', [ContentController::class, 'index'])->name('content');
     Route::get('/content/edit', [ContentController::class, 'index'])->name('content.edit');
     Route::post('/content/edit', [ContentController::class, 'edit']);

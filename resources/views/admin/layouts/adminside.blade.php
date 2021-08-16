@@ -18,17 +18,17 @@
 <nav>
     <ul class="ad-nav-list">
         <li class="ad-nav-list__item">
-            <a href="ad-nav-list__item-link">
-                Home
+            <a href="{{route('dashboard')}}">
+                Dashboard
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="ad-nav-list__item-link">
+            <a href="{{route('content')}}">
                 Content
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="ad-nav-list__item-link">
+            <a href="{{route('fileUpload')}}">
                 Images
             </a>
         </li>
