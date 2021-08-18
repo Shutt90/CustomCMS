@@ -1,6 +1,6 @@
 <section class="footer">
     <div class="footer-banner">
-    
+        <img src=""      
     </div>
 
     <div class="footer-copy">
