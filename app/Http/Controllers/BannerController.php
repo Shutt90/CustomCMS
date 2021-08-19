@@ -10,8 +10,7 @@ class BannerController extends Controller
     {
 
         
-
-        
+           
     }
 
 }

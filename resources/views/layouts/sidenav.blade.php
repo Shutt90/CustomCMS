@@ -4,13 +4,13 @@
                 <a href="{{route('home')}}">Home</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="{{route('about')}}">About</a>
+                <a href="#">About</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="{{route('blog')}}">Blog</a>
+                <a href="#">Blog</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="{{route('gallery')}}">Gallery</a>
+                <a href="#">Gallery</a>
             </li>
         </ul>
     </div>

@@ -8,17 +8,30 @@
 <body>
     <script src="{{url('')}}/js/app.js" type="module"></script>
 
-    <h1 class="dashboard-title">Welcome back</h1>
+    <h1 class="dashboard-title">Welcome back, @dd($user)</h1>
 
     <div class="dashboard-content">
 
         <div class="dashboard-screens">
-            <div class="dashboard-screen">
-                <canvas class="visitors"></canvas>
-                <canvas class="current-visitors"></canvas>
-                <canvas class="date"></canvas>
-                <canvas class="time"></canvas>
+
+            <div class="row-margin row justify-center">
+                <div class="col-lg-6 col-sm-12">
+                    <canvas class="visitors"></canvas>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <canvas class="current-visitors"></canvas>
+                </div>
             </div>
+
+            <div class="row-margin row justify-center">
+                <div class="col-lg-6 col-sm-12">
+                    <canvas class="date"></canvas>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <canvas class="time"></canvas>
+                </div>
+            </div>
+            
         </div>
 
     </div>

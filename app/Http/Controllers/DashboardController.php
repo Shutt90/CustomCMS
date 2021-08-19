@@ -9,15 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(User $user)
     {
-        return view('layouts.dashboard');   
+        $user = User::get();
+
+        
+        return view('layouts.dashboard', [
+            'user' => $user,
+        ]);
     }
 
-    public function fetch(User $user)
-    {
-
-        $user = Auth()->user();
-
-    }
 }
