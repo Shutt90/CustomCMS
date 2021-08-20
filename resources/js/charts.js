@@ -1,18 +1,17 @@
 import Chart from 'chart.js/auto';
 
 const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
+    '5 days ago',
+    '4 days ago',
+    '3 days ago',
+    '2 days ago',
+    'Yesterday',
   ];
   
   const data = {
     labels: labels,
     datasets: [{
-      label: 'My First dataset',
+      label: 'Visitors',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
       data: [0, 10, 5, 2, 20, 30, 45],

@@ -6,3 +6,5 @@
 @include('sidenav')
 
 @include('layouts.footer')
+
+@stop

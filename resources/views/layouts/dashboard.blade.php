@@ -8,7 +8,7 @@
 <body>
     <script src="{{url('')}}/js/app.js" type="module"></script>
 
-    <h1 class="dashboard-title">Welcome back, @dd($user)</h1>
+    <h1 class="dashboard-title">Welcome back, $userName</h1>
 
     <div class="dashboard-content">
 
