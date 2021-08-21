@@ -10,7 +10,7 @@
                 <a href="#">Blog</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="#">Gallery</a>
+                <a href="{{url('gallery')}}">Gallery</a>
             </li>
         </ul>
     </div>

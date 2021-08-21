@@ -1,7 +1,7 @@
 @extends('layouts.header')
-<h3 class="image-title">
-                Image Uploader
-            </h3>    
+    <h3 class="image-title">
+        Image Uploader
+    </h3>    
     <div class="image-container">
         <form action="{{route('fileUpload')}}" method="POST" enctype="multipart/form-data">
 

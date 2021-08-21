@@ -9,13 +9,13 @@
     <title>Contents</title>
 </head>
 <body>
-    
-</body>
-</html>
 
 @section('content')
 
-<nav>
+<i class="fas fa-bars ad-nav-menu"></i>
+<i class="fas fa-chevron-down ad-nav-menu"></i>
+
+<nav class="ad-nav">
     <ul class="ad-nav-list">
         <li class="ad-nav-list__item">
             <a href="{{route('dashboard')}}">
@@ -28,7 +28,7 @@
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="{{route('fileUpload')}}">
+            <a href="{{route('gallery')}}">
                 Images
             </a>
         </li>
@@ -54,3 +54,6 @@
         </li>  
     </ul>
 </nav>
+
+</body>
+</html>

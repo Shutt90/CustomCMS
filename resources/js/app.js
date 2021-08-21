@@ -1,4 +1,3 @@
-import "@fortawesome/fontawesome-free";
-
-require('./bootstrap');
+require('./bootstrap.js');
 require('./charts.js');
+require('./nav.js');

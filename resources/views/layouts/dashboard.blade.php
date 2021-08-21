@@ -6,9 +6,9 @@
 @section('content')
 
 <body>
-    <script src="{{url('')}}/js/app.js" type="module"></script>
+    <script src="{{url('')}}/js/app.js" type="module" defer></script>
 
-    <h1 class="dashboard-title">Welcome back, $userName</h1>
+    <h1 class="dashboard-title">Welcome back, @php $userName @endphp</h1>
 
     <div class="dashboard-content">
 
@@ -20,15 +20,6 @@
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <canvas class="current-visitors"></canvas>
-                </div>
-            </div>
-
-            <div class="row-margin row justify-center">
-                <div class="col-lg-6 col-sm-12">
-                    <canvas class="date"></canvas>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <canvas class="time"></canvas>
                 </div>
             </div>
             

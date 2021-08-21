@@ -19,7 +19,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/admin/images', [GalleryController::class, 'index'])->name('gallery');
     Route::post('/admin/images', [GalleryController::class, 'store']);
 
-    Route::get('/upload-file', [FileUpload::class, 'createForm']);
-    Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+    Route::get('/gallery', [FileUpload::class, 'createForm']);
+    Route::post('/gallery', [FileUpload::class, 'fileUpload'])->name('fileUpload');
 
 });

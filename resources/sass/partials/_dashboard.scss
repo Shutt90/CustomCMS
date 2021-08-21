@@ -1,7 +1,10 @@
 .dashboard {
     display: flex;
     flex-direction: row;
-    
+
+    &-title {
+        width: 400px;
+    }
 
     &-screen {
         width: 40%;
@@ -10,8 +13,6 @@
 
         canvas {
             border: black 5px solid;
-
-           
         }
 
     }

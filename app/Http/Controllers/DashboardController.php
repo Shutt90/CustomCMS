@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function index(User $user)
     {
-        $userName = dd(Auth::user());
+        $userName = Auth::user();
 
         return view('layouts.dashboard', [
             'userName' => $userName,
