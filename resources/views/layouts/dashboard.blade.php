@@ -8,7 +8,7 @@
 <body>
     <script src="{{url('')}}/js/app.js" type="module" defer></script>
 
-    <h1 class="dashboard-title">Welcome back, @php $userName @endphp</h1>
+    <h1 class="dashboard-title">Welcome back</h1>
 
     <div class="dashboard-content">
 
