@@ -11374,6 +11374,7 @@ body {
 
 .main-title {
   position: relative;
+  left: 0 0 0 auto;
 }
 .main-title__txt {
   text-align: right;
@@ -11405,6 +11406,7 @@ body {
   position: fixed;
   left: 0px;
   width: 100px;
+  top: 30px;
 }
 .side-nav__items {
   list-style: none;
@@ -11470,10 +11472,12 @@ nav {
 
 .ad-nav-list {
   display: flex;
+  position: absolute;
   flex-direction: column;
   justify-content: center;
   align-items: left;
   width: 200px;
+  top: -1000px;
 }
 .ad-nav-list__item {
   height: 5rem;

@@ -26,10 +26,12 @@ nav {
 
     &-list {
         display: flex;
+        position: absolute;
         flex-direction:column;
         justify-content: center;
         align-items: left;
         width: 200px;
+        top: -1000px;
 
         &__item {
             height: 5rem;

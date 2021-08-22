@@ -6,9 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title')</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
-        <link href="{{url('')}}/fontawesome-web/css/all.min.css" rel="stylesheet">>
+        <link href="{{url('')}}/fontawesome-web/css/all.min.css" rel="stylesheet">
         <script defer src="{{url('')}}/fontawesome-web/js/all.min.js"></script>
-
     </head>
     
     <nav class="nav">
