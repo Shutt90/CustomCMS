@@ -11477,7 +11477,10 @@ nav {
   justify-content: center;
   align-items: left;
   width: 200px;
-  top: -1000px;
+  left: -300px;
+  background-color: #9dddc8;
+  border-right: #98c5e1 0.5rem solid;
+  border-bottom: #98c5e1 0.5rem solid;
 }
 .ad-nav-list__item {
   height: 5rem;
@@ -11487,6 +11490,9 @@ nav {
   background-color: #b9eec5;
   margin: 1rem;
   border: #9dddc8 solid 2px;
+}
+.ad-nav-list__item-link {
+  color: black;
 }
 
 .image-title {

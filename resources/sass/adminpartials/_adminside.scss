@@ -31,7 +31,11 @@ nav {
         justify-content: center;
         align-items: left;
         width: 200px;
-        top: -1000px;
+        left: -300px;
+        background-color: $shade3;
+        border-right: $shade4 0.5rem solid;
+        border-bottom: $shade4 0.5rem solid;
+
 
         &__item {
             height: 5rem;
@@ -41,6 +45,11 @@ nav {
             background-color: $shade2;
             margin: 1rem;
             border: $shade3 solid 2px;
+
+            &-link {
+                color: black;
+
+            }
         }
     } 
 }

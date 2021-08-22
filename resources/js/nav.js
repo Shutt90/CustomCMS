@@ -8,7 +8,7 @@ const nav = document.querySelector('.ad-nav');
 bars.addEventListener('click', function() {
     bars.style.display = "none";
     chevDown.style.display = "block";
-    gsap.to(".ad-nav", {y: 1000, duration: 3});
+    gsap.to(".ad-nav", {x: 300, duration: 2, ease: "power4"});
     console.log("clicked");
 
 
@@ -17,6 +17,6 @@ bars.addEventListener('click', function() {
 chevDown.addEventListener('click', function() {
     chevDown.style.display = "none";
     bars.style.display = "block";
-    gsap.to(".ad-nav", {y: -1000, duration: 3});
+    gsap.to(".ad-nav", {x: -300, duration: 2, ease: "power1"});
 
 })

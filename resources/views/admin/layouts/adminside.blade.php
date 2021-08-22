@@ -18,37 +18,37 @@
 <nav class="ad-nav">
     <ul class="ad-nav-list">
         <li class="ad-nav-list__item">
-            <a href="{{route('dashboard')}}">
+            <a class="ad-nav-list__item-link" class="ad-nav-list__item-link" href="{{route('dashboard')}}">
                 Dashboard
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="{{route('content')}}">
+            <a class="ad-nav-list__item-link" href="{{route('content')}}">
                 Content
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="{{route('gallery')}}">
+            <a class="ad-nav-list__item-link" href="{{route('gallery')}}">
                 Images
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="ad-nav-list__item-link">
+            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
                 Blog
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="ad-nav-list__item-link">
+            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
                 Links
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="ad-nav-list__item-link">
+            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
                 Pricing
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a href="ad-nav-list__item-link">
+            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
                 Terms
             </a>
         </li>  
