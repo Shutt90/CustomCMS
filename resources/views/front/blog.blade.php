@@ -13,7 +13,8 @@
         </div>
 
         <div class="blog-posts">
-            @dd($blog)
+
+        
             
         </div>
 
