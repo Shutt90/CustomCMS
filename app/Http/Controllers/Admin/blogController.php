@@ -43,8 +43,12 @@ class blogController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'user_id' => 'required',
+            'post' => 'required',
 
-
+        ])
         
     }
 
