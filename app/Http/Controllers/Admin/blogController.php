@@ -43,13 +43,18 @@ class blogController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $this->validate($request, [
             'title' => 'required|unique:posts|max:255',
-            'user_id' => 'required',
-            'post' => 'required',
+            'post' => 'required',    
+            
+        ]);
 
+        Blog::create([
+            'title' => $request->title,
+            'post' => $request->post,
         ])
-        
+
+
     }
 
     /**
