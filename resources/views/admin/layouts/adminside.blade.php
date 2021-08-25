@@ -33,7 +33,7 @@
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
+            <a class="ad-nav-list__item-link" href="{{route('blog')}}">
                 Blog
             </a>
         </li>

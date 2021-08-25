@@ -11554,3 +11554,11 @@ nav {
   font-family: "Courier New", Courier, monospace;
   margin-top: 2rem;
 }
+
+.blog-form {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

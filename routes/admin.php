@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\blogController;
 
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 Route::get('/blog', [blogController::class, 'index'])->name('blog');
+Route::post('/blog', [blogController::class, 'store'])->name('blog.store');
 
 //Admin controllers
 Route::group(['middleware' => 'auth'], function() {
