@@ -18,9 +18,7 @@ class blogController extends Controller
     {
         $blog = blog::orderBy('id', 'desc')->get();
 
-        return view('admin.blog', [
-            'blog' => $blog
-        ]);
+        return view('admin.blog', compact("blog"));
     }
 
     /**
@@ -99,6 +97,6 @@ class blogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        Blog::findorfail('id')
     }
 }
