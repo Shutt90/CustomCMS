@@ -50,7 +50,7 @@ class blogController extends Controller
         Blog::create([
             'title' => $request->title,
             'post' => $request->post,
-        ])
+        ]);
 
 
     }

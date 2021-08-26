@@ -9,16 +9,6 @@ class Blog extends Model
 {
     use HasFactory;
 
-    public $table = 'blogs';
-
-    public function user()
-
-    {
-
-    return $this->belongsTo(User::class, Blog::class);
-
-        
-
-    }
+    protected $table = 'blogs';
 
 }
