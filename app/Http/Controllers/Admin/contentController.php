@@ -25,4 +25,28 @@ class contentController extends Controller
         return view('admin.contents.index', compact('contents'));
 
     }
+
+    public function update($id, Request $request)
+    {
+
+        $input = $request->all();
+        $rules  = [
+            //"title" => "required"
+        ];
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()){
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
+        $content=content::findOrFail($id);
+        $content->update($request->except(['image']));
+
+        if($request->hasFile('image')) {
+            $this->imagedelete($services['image'], 'contents');
+            $upload = $this->imageupload($input, 'image', 'contents', 'null', '600');
+            content::where('id', $id)->update(array('image' => $upload));
+        }
+    }
+
+
 }
