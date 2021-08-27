@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Validation\Validator;
 
 class contentController extends Controller
 {
@@ -26,12 +26,23 @@ class contentController extends Controller
 
     }
 
+    public function store(Request $request)
+    {
+
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'image' => 'image'
+
+        ])
+
+    }
+
     public function update($id, Request $request)
     {
 
         $input = $request->all();
         $rules  = [
-            //"title" => "required"
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()){
