@@ -33,8 +33,13 @@ class contentController extends Controller
             'title' => 'required|max:255',
             'content' => 'required',
             'image' => 'image'
+        ]);
 
-        ])
+        Content::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $request->image,
+        ]);
 
     }
 
