@@ -29,10 +29,10 @@ class contentController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, [
+        $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'image' => 'image'
+            'image' => 'image|mimes:jpg,png,jpeg'
         ]);
 
         Content::create([
