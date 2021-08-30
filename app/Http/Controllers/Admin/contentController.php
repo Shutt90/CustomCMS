@@ -48,6 +48,7 @@ class contentController extends Controller
 
         $input = $request->all();
         $rules  = [
+            "image" => "image|mimes:jpg,png,jpeg"
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()){
@@ -58,7 +59,7 @@ class contentController extends Controller
         $content->update($request->except(['image']));
 
         if($request->hasFile('image')) {
-            $this->imagedelete($services['image'], 'contents');
+            $this->imagedelete($content['image'], 'contents');
             $upload = $this->imageupload($input, 'image', 'contents', 'null', '600');
             content::where('id', $id)->update(array('image' => $upload));
         }

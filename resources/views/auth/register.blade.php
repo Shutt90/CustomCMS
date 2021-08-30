@@ -38,6 +38,8 @@
         </div>
     </div>
 
+    @include("admin.layouts.errors")
+
 </section>
 
 @include('layouts.footer')

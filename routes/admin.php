@@ -11,9 +11,9 @@ use App\Http\Controllers\Admin\blogController;
 Route::group(['middleware' => 'auth'], function() {
     
     Route::resources([
-        'content' => contentController::class,
-        'blog' => blogController::class,
-        'gallery' => fileUploadController::class,
+        '/content' => contentController::class,
+        '/blog' => blogController::class,
+        '/gallery' => fileUploadController::class,
     ]);
 
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');

@@ -12,15 +12,7 @@
             </div>
             @endif
 
-            @if (count($errors)>0)
-            <div class="image-container__error">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+            @include("admin.layouts.errors")
 
             <div class="image-file">
                 <label class="image-file__label" for="chooseImage">Select Image</label>
@@ -42,8 +34,7 @@
                 @method("DELETE")
                 <button type="submit"><i class="fas fa-trash"></i></button>
             </form>
-    
-            <img src="{{storage_path('app/public/images/' . $image->name) }}" alt="imagenonoshow">
+            <img src="{{asset('storage/images/' . $image->name)}}" alt="imagenonoshow">
         </div>
         @endforeach
     </div>
