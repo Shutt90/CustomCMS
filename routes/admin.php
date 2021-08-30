@@ -13,14 +13,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resources([
         'content' => contentController::class,
         'blog' => blogController::class,
-        'file' => fileUploadController::class,
+        'fileUpload' => fileUploadController::class,
     ]);
 
-    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
-
-    Route::get('/admin/images', [GalleryController::class, 'index'])->name('gallery');
-    Route::post('/admin/images', [GalleryController::class, 'store']);
-
+    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');#
+    
     Route::get('/gallery', [fileUploadController::class, 'createForm']);
     Route::post('/gallery', [fileUploadController::class, 'fileUpload'])->name('fileUpload');
 

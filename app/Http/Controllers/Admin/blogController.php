@@ -97,6 +97,6 @@ class blogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        Blog::findorfail('id')
+        Blog::findorfail('id'); 
     }
 }
