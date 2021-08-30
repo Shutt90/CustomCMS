@@ -3,8 +3,7 @@
         Image Uploader
     </h3>    
     <div class="image-container">
-        <form action="{{route('fileUpload')}}" method="POST" enctype="multipart/form-data">
-
+        <form action="{{url('gallery')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             @if ($message = Session::get('success'))
@@ -24,7 +23,7 @@
             @endif
 
             <div class="image-file">
-            <label class="image-file__label" for="chooseImage">Select Image</label>
+                <label class="image-file__label" for="chooseImage">Select Image</label>
 
                 <input type="file" name="file" class="image-file__input" id="chooseImage">
             </div>
@@ -37,7 +36,15 @@
 
     <div class="images">
         @foreach($images as $image)
-            <img src="/storage/app/public/images/{{$image->name}}">
+        <div class="images-container">
+            <form method="POST" route="gallery/{gallery}">
+                @csrf
+                @method("DELETE")
+                <button type="submit"><i class="fas fa-trash"></i></button>
+            </form>
+    
+            <img src="{{storage_path('app/public/images/' . $image->name) }}" alt="imagenonoshow">
+        </div>
         @endforeach
     </div>
     

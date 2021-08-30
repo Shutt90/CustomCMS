@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 class fileUploadController extends Controller
 {
-    public function get()
+    public function index()
     {
 
         $images = File::orderBy('id', 'desc')->get();
@@ -22,7 +22,7 @@ class fileUploadController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:jpg,png,jpeg'
+            'file' => 'mimes:jpg,png,jpeg'
         ]);
 
         $fileModel = new File;
@@ -38,5 +38,15 @@ class fileUploadController extends Controller
             ->with('Success', 'Image has successfully been uploaded')
             ->with('file', $fileName);
         }
+    }
+
+    public function destroy(int $id) 
+    {
+
+        $file = File::find($id);
+        $file->delete();
+
+        return back();
+
     }
 }

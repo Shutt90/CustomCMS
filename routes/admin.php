@@ -13,12 +13,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resources([
         'content' => contentController::class,
         'blog' => blogController::class,
-        'fileUpload' => fileUploadController::class,
+        'gallery' => fileUploadController::class,
     ]);
 
-    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');#
+    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
     
-    Route::get('/gallery', [fileUploadController::class, 'createForm']);
-    Route::post('/gallery', [fileUploadController::class, 'fileUpload'])->name('fileUpload');
-
 });
