@@ -3,7 +3,7 @@
         Image Uploader
     </h3>    
     <div class="image-container">
-        <form action="{{url('gallery')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('admin/gallery')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             @if ($message = Session::get('success'))

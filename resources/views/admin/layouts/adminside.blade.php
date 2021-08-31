@@ -18,22 +18,22 @@
 <nav class="ad-nav">
     <ul class="ad-nav-list">
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" class="ad-nav-list__item-link" href="{{route('dashboard')}}">
+            <a class="ad-nav-list__item-link" class="ad-nav-list__item-link" href="{{url('admin/dashboard')}}">
                 Dashboard
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('content')}}">
+            <a class="ad-nav-list__item-link" href="#">
                 Content
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('gallery')}}">
+            <a class="ad-nav-list__item-link" href="{{url('admin/gallery')}}">
                 Images
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('blog')}}">
+            <a class="ad-nav-list__item-link" href="{{url('admin/blog')}}">
                 Blog
             </a>
         </li>

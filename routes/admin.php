@@ -8,12 +8,12 @@ use App\Http\Controllers\Admin\fileUploadController;
 use App\Http\Controllers\Admin\blogController;
 
 //Admin controllers
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth', 'prefix' => '/admin'], function() {
     
     Route::resources([
-        'content' => contentController::class,
-        'blog' => blogController::class,
-        'gallery' => fileUploadController::class,
+        '/content' => contentController::class,
+        '/blog' => blogController::class,
+        '/gallery' => fileUploadController::class,
     ]);
 
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
