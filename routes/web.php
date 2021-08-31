@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 
 //Front Controllers
 use App\Http\Controllers\front\HomeController;
+use App\Http\Controllers\front\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Controllers\front\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 Route::group(['middleware' => 'guest'], function() {
         
@@ -29,4 +31,5 @@ Route::group(['middleware' => 'guest'], function() {
 
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::post('/register', [RegisterController::class, 'store']);
+
 });

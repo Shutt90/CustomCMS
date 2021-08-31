@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\fileUploadController;
 use App\Http\Controllers\Admin\blogController;
 
 //Admin controllers
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     
     Route::resources([
         '/content' => contentController::class,

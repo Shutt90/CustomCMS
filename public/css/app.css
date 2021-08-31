@@ -11449,6 +11449,28 @@ body {
   border: black 5px solid;
 }
 
+.gallery-page__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-page__container-box {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+}
+.gallery-page__container-box img {
+  height: 300px;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery-page__container-box__title {
+  text-align: center;
+}
+
 nav {
   width: 250px;
   position: fixed;
