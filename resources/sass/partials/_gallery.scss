@@ -1,29 +1,73 @@
-.gallery-page {
+.home-gallery {
 
-    &__container {
+    &-title {
+        position: relative;
+        text-align: center;
+        font-size: 2.5rem;
+        color: white;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+
+        &:after {
+        content: "";
+        width: 2.5rem;
+        height: 3px;
+        background: $primary;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% - 3rem);
+        }
+    }
+
+    &__box {
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
+        column-count: 4;
+        width: 100%;
 
-        &-box {
+        &-container {
             position: relative;
             display: flex;
+            column-count: 3;
             flex-wrap: wrap;
-            width:300px;
-            height: 300px;
+            width: 390px;
+            height: 280px;
+            margin: 2rem 2rem;
+            background-color: white;
+            color: black;
 
-            img {
-                height: 300px;
-                width: 300px;
-                object-fit: cover;
+                &:hover {
+                    background-color: $primary;
+                    color: black;
+                }
 
-            }
 
-            &__title {
-                text-align: center;
+                img {
+                    justify-content: center;
+                    object-fit: cover;
+                    height: 280px;
+                    width: 390px;
+                    clip-path: polygon(1% 1%, 1% 10%, 85% 10%, 75% 30%, 1% 30%, 1% 99%, 99% 99%, 99% 1%, 1% 1%);
+                }
+
+            &-overlay {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+
+                &_title {
+                    position: absolute;
+                    left: 0;    
+                    top: 10%;
+                    padding: 0.5rem 2rem 2rem 0.5rem;
+                }
             }
         }
-
     }
-    
 }
