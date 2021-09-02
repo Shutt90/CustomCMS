@@ -45,6 +45,7 @@ class fileUploadController extends Controller
 
         $file = File::find($id);
         $file->delete();
+        flash("success", "Content has been deleted");
 
         return back();
 

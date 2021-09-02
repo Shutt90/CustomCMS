@@ -10,11 +10,18 @@ use Illuminate\Validation\Validator;
 class contentController extends Controller
 {
     
-    public function index(Request $request)
+    public function index()
     {
         return view('admin.contents.index', [
             'contents' => Content::orderBy('id', 'asc')->get()
         ]);
+    }
+
+    public function create()
+    {
+
+        return view('admin.contents.create');
+
     }
 
     public function edit($id)
@@ -63,6 +70,17 @@ class contentController extends Controller
             $upload = $this->imageupload($input, 'image', 'contents', 'null', '600');
             content::where('id', $id)->update(array('image' => $upload));
         }
+    }
+
+    public function destroy(int $id)
+    {
+
+        $content = Content::find($id);
+        $content->delete();
+        flash("success", "Content has been deleted");
+
+        return back();
+
     }
 
 
