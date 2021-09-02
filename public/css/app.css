@@ -11584,6 +11584,7 @@ nav {
   border: black 2px solid;
 }
 .image-container__error {
+  display: flex;
   background-color: darkred;
   height: 3rem;
   font-size: 1.5rem;
@@ -11597,7 +11598,6 @@ nav {
   padding: 1.5rem;
   align-items: center;
   justify-content: center;
-  display: flex;
 }
 .image-file {
   display: flex;
@@ -11641,11 +11641,12 @@ nav {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.images-container button {
+.images-container i {
   display: absolute;
   color: #e3342f;
   top: 0px;
-  left: 0px;
+  right: 0px;
+  z-index: 1001;
 }
 
 .blog-form {

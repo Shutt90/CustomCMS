@@ -29,10 +29,10 @@
     <div class="images">
         @foreach($images as $image)
         <div class="images-container">
-            <form method="POST" route="/admin/gallery/{gallery}">
+            <form method="POST" action="{{route('gallery.destroy', $image->id)}}">
                 @csrf
                 @method("DELETE")
-                <button type="submit"><i class="fas fa-trash"></i></button>
+                <button onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash"></i></button>
             </form>
             <img src="{{asset('storage/images/' . $image->name)}}" alt="imagenonoshow">
         </div>

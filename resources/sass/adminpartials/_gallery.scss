@@ -1,5 +1,4 @@
 .image {
-
     &-title {
         font-size: 3rem;
         margin-bottom: 2rem;
@@ -25,6 +24,7 @@
         }
 
         &__error {
+            display: flex;                        
             background-color: darkred;
             height: 3rem;
             font-size: 1.5rem;
@@ -38,8 +38,7 @@
             padding:1.5rem;
             align-items:center;
             justify-content: center;
-            display: flex;
-            
+
         }
     }
 
@@ -91,11 +90,12 @@
             object-fit: cover;
         }
 
-        button {
+        i {
             display: absolute;
             color: $red;
             top: 0px;
-            left: 0px;
+            right: 0px;
+            z-index: 1001;
         }
 
     }

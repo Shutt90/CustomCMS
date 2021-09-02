@@ -1,31 +1,25 @@
 @include('admin.layouts.adminside')
 
-<div class="contents">
-    <ul class="contents-items">
-        <li class="content-items__list">
-            <a href="#">
-                Homepage
+<div class="admin-contents">
+    <h3 class="admin-contents__title">
+        Contents
+        <a href="{{route('admin.content.create')}}">Create New</a>
+    </h3>
+    <div class="admin-contents__container">
+        @foreach($contents as $content)
+        <div class="admin-contents__container-section">
+            {{$content->title}}
+            <a href="{{route('admin.content.{{$content->id}}.edit')}}">
+                <i class="fas fa-pen-square"></i>
             </a>
-        </li>
-        <li class="content-items__list">
-            <a href="#">
-                About
-            </a>
-        </li>
-        <li class="content-items__list">
-            <a href="#">
-                Gallery
-            </a>
-        </li>
-        <li class="content-items__list">
-            <a href="#">
-                Blog
-            </a>
-        </li>
-        <li class="content-items__list">
-            <a href="#">
-                Pricing
-            </a>
-        </li>
-    </ul>
+            <form method="POST" action="{{route('admin.content.{{$content->id}}')}}">
+                @csrf
+                @method("DELETE")
+                <button type="submit"><i class="fas fa-trash"></i></button>
+            </form>
+        </div>
+            
+    </div>
+
+
 </div>
