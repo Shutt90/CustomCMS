@@ -13,7 +13,7 @@ class contentController extends Controller
     public function index(Request $request)
     {
         return view('admin.contents.index', [
-            'content' => Content::where('id', '1')->first()
+            'content' => Content::orderBy('id', 'asc')->get()
         ]);
     }
 
