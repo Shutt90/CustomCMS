@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Http\Controllers\Controller;
+use App\Models\File;
 use Illuminate\Validation\Validator;
 
 class contentController extends Controller
@@ -47,6 +48,20 @@ class contentController extends Controller
             'content' => $request->content,
             'image' => $request->image,
         ]);
+
+        $fileModel = new Content;
+
+        if($request->file()) {
+            $fileName = time() . '_' . $request->image->getClientOriginalName();
+            $filePath = $request->file('image')->storeAs('images', $fileName, 'public');
+            $fileModel->name = time() . '_' . $request->image->getClientOriginalName();
+            $fileModel->file_path = '/storage /' .  $filePath;
+            $fileModel->save();
+            dd($filePath);
+
+            return back()
+            ->with('Success', 'Content has successfully been uploaded');
+        }
 
     }
 
