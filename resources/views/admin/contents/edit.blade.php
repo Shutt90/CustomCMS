@@ -5,15 +5,10 @@
         Contents
     </h3>
     <div class="create-contents__container">
-        @include("admin.layouts.errors")
-        {{ Form::open(array('route' => 'content.store', 'method' => 'POST', 'files' => true)) }}
+        {{ Form::open(array('url' => 'content.edit', 'method' => 'POST')) }}
         @csrf
         @include('admin.contents.layouts.form')
         {{ Form::close()}}
-
-
-
-            
     </div>
 
 

@@ -23,17 +23,17 @@
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('content')}}">
+            <a class="ad-nav-list__item-link" href="{{route('content.index')}}">
                 Content
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('gallery')}}">
+            <a class="ad-nav-list__item-link" href="{{url('gallery.index')}}">
                 Images
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('blog')}}">
+            <a class="ad-nav-list__item-link" href="{{url('blog.index')}}">
                 Blog
             </a>
         </li>
