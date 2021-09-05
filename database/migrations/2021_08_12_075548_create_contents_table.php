@@ -15,8 +15,8 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id()->unique();
-            $table->string("title")->nullable();
-            $table->longtext("content")->nullable();
+            $table->string("title");
+            $table->longtext("content");
             $table->varchar("image")->nullable();
             $table->varchar("file_path")->nullable();
             $table->timestamps();
