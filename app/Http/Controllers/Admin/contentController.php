@@ -52,17 +52,16 @@ class contentController extends Controller
         $fileModel = new Content;
 
         if($request->file()) {
-            $fileName = time() . '_' . $request->image->getClientOriginalName();
+            $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
             $filePath = $request->file('image')->storeAs('images', $fileName, 'public');
-            $fileModel->name = time() . '_' . $request->image->getClientOriginalName();
-            $fileModel->file_path = '/storage /' .  $filePath;
+            $fileModel->image = time() . '_' . $request->file('image')->getClientOriginalName();
+            $fileModel->file_path = '/storage/' .  $filePath;
             $fileModel->save();
-            dd($filePath);
-
-            return back()
-            ->with('Success', 'Content has successfully been uploaded');
         }
 
+        return back()
+        ->with('Success', 'Content has successfully been uploaded');
+        
     }
 
     public function update($id, Request $request)
@@ -92,9 +91,9 @@ class contentController extends Controller
 
         $content = Content::find($id);
         $content->delete();
-        flash("success", "Content has been deleted");
 
-        return back();
+        return back()
+        ->with('Success', 'Content has been deleted');
 
     }
 
