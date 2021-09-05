@@ -11279,6 +11279,9 @@ textarea.form-control-lg {
   margin: 3rem auto;
 }
 
+.nav {
+  z-index: 10;
+}
 .nav-list {
   display: flex;
   flex-direction: row;
@@ -11289,6 +11292,7 @@ textarea.form-control-lg {
 .nav-list a {
   text-decoration: none;
   transition: transform ease 0.5s;
+  margin-right: 2rem;
 }
 .nav-list a:hover {
   transform: scale(1.3);
