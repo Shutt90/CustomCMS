@@ -28,9 +28,9 @@ class contentController extends Controller
     public function edit($id)
     {
 
-        $content = Content::findorfail($id);
+        $contents = Content::findorfail($id);
 
-        return view('admin.contents.index', compact('contents'));
+        return view('admin.contents.edit', compact('contents'));
 
     }
 
@@ -84,6 +84,8 @@ class contentController extends Controller
             $upload = $this->imageupload($input, 'image', 'contents', 'null', '600');
             content::where('id', $id)->update(array('image' => $upload));
         }
+
+        return back();
     }
 
     public function destroy(int $id)
