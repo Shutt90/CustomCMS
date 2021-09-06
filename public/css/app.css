@@ -11566,6 +11566,32 @@ nav {
   color: black;
 }
 
+.create-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.create-contents label {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 2rem 0rem 1rem 0rem;
+  font-size: 1.5rem;
+}
+.create-contents .btn {
+  margin-top: 2rem;
+}
+
+.contents-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .image-title {
   font-size: 3rem;
   margin-bottom: 2rem;

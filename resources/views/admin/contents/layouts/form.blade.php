@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group contents-center">
 {!! Form::label('title', 'Title:') !!}
 {!! Form::text('title', null) !!}
 </div>
