@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,700;1,900&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.0 (https://getbootstrap.com/)
@@ -11271,7 +11271,7 @@ textarea.form-control-lg {
   }
 }
 * {
-  font-style: "Permanent Marker", cursive;
+  font-family: "Roboto", sans-serif;
 }
 
 .row-margin {
@@ -11392,18 +11392,13 @@ body {
   width: 40%;
   background-color: black;
 }
-.main-images {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
+.main-about {
+  float: right;
+  text-align: left;
 }
-.main-images img {
-  height: 400px;
-  width: 600px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin: 1rem;
+.main-about__img {
+  width: 50%;
+  height: auto;
 }
 
 .side-nav {

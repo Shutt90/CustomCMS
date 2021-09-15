@@ -15,27 +15,16 @@
             height: 5px;
             width: 40%;
             background-color: black;
-
-
-        }
-    
-
+        }    
     }
 
+    &-about {
+        float: right;
+        text-align: left;
 
-    &-images {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-
-        img {
-            height: 400px;
-            width: 600px;
-            object-fit: cover;
-            margin: 1rem;
-
+        &__img {
+            width: 50%;
+            height: auto;
         }
-
     }
 }
