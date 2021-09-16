@@ -9,6 +9,7 @@ use App\Http\Controllers\front\ContentController;
 //Front Controllers
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\GalleryController;
+use App\Http\Controllers\front\AboutController;
 
 /*
 |--------------------------------------------------------------------------
