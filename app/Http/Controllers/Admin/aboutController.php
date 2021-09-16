@@ -12,7 +12,7 @@ class aboutController extends Controller
     public function index()
     {
         return view('admin.about.index', [
-            'about' => About::orderBy('id', 'asc')->get()
+            'about' => About::first()
         ]);
     }
 
