@@ -17,8 +17,8 @@ class CreateContentsTable extends Migration
             $table->id()->unique();
             $table->string("title");
             $table->longtext("content");
-            $table->varchar("image")->nullable();
-            $table->varchar("file_path")->nullable();
+            $table->ipAddress("image")->nullable();
+            $table->ipAddress("file_path")->nullable();
             $table->timestamps();
         });
     }
