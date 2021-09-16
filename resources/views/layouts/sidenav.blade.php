@@ -4,7 +4,7 @@
                 <a href="{{route('home')}}">Home</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="#">About</a>
+                <a href="{{route('about')}}">About</a>
             </li>
             <li class="side-nav__items-list">
                 <a href="#">Blog</a>
