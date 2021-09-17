@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\blog;
+use App\Models\Blog;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BlogFactory extends Factory
@@ -12,7 +12,7 @@ class BlogFactory extends Factory
      *
      * @var string
      */
-    protected $model = blog::class;
+    protected $model = Blog::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,9 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence,
+            'user_id' => $this->faker->numberBetween(1, 10),
+            'post' => $this->faker->sentence(25),
         ];
     }
 }

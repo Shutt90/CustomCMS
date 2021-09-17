@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Content;
+use App\Models\Blog;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,5 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         //10 users with password of password
         User::factory(10)->create();
+        Content::factory(5)->create();
+        Blog::factory(10)->create();
+
     }
 }
