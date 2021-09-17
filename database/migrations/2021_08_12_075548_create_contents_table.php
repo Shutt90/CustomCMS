@@ -19,6 +19,7 @@ class CreateContentsTable extends Migration
             $table->longtext("content");
             $table->ipAddress("image")->nullable();
             $table->ipAddress("file_path")->nullable();
+            $table->string("page_name")->nullable();
             $table->timestamps();
         });
     }
