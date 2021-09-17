@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Blog;
+use App\Models\Content;
 
-class BlogSeeder extends Seeder
+class ContentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class BlogSeeder extends Seeder
      */
     public function run()
     {
-        Blog::factory(10)->create();
+        Content::factory(5)->create();
     }
 }
