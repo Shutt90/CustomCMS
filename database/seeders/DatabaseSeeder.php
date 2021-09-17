@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Content;
 use App\Models\Blog;
+use App\Models\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         Content::factory(5)->create();
         Blog::factory(10)->create();
+        File::factory(10)->create();
 
     }
 }
