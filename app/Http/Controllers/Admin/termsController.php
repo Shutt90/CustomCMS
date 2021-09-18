@@ -34,7 +34,7 @@ class termsController extends Controller
      * @param  \App\Models\Terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Term $term)
+    public function update(Request $request, Term $term, int $id)
     {
         $input = $request->all();
         $validator = Validator::make($input);

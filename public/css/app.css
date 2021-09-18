@@ -11706,3 +11706,11 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
+.admin-terms__title {
+  text-align: center;
+}
+.admin-terms__content {
+  text-align: center;
+  margin: 2rem;
+}
