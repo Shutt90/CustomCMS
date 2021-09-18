@@ -8,6 +8,7 @@ use App\Models\Content;
 use App\Models\Blog;
 use App\Models\File;
 use App\Models\About;
+use App\Models\Term;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +25,6 @@ class DatabaseSeeder extends Seeder
         Blog::factory(10)->create();
         File::factory(10)->create();
         About::factory(1)->create();
+        Term::factory(1)->create();
     }
 }

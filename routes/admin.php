@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\dashboardController;
 use App\Http\Controllers\Admin\fileUploadController;
 use App\Http\Controllers\Admin\blogController;
 use App\Http\Controllers\Admin\aboutController;
+use App\Http\Controllers\admin\termsController;
 use App\Http\Controllers\Auth\LoginController;
 
 //Admin controllers
@@ -21,6 +22,8 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
 
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/terms', [termsController::class, 'index'])->name('terms');
+    Route::put('/terms', [termsController::class, 'update'])->name('terms.edit');
 
 });
 

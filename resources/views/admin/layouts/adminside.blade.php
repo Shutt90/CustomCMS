@@ -28,28 +28,18 @@
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('gallery.index')}}">
+            <a class="ad-nav-list__item-link" href="{{route('gallery.index')}}">
                 Images
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="{{url('blog.index')}}">
+            <a class="ad-nav-list__item-link" href="{{route('blog.index')}}">
                 Blog
             </a>
         </li>
         <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
-                Links
-            </a>
-        </li>
-        <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
-                Pricing
-            </a>
-        </li>
-        <li class="ad-nav-list__item">
-            <a class="ad-nav-list__item-link" href="ad-nav-list__item-link">
-                Terms
+            <a class="ad-nav-list__item-link" href="{{route('terms')}}">
+                Terms & Conditions
             </a>
         </li>  
     </ul>

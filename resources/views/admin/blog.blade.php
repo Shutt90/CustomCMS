@@ -14,7 +14,7 @@
     <input type="textarea" name="post" id="post" value="{{old('post')}}">
     <label for="image">Insert Image</label>
     <input type="file" name="file" id="file">
-    <input type="submit" name="submit" id="submit">
+<input type="submit" name="submit" id="submit">
 </form>
 
 @if ($errors->any())
