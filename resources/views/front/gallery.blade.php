@@ -11,7 +11,13 @@
             <div class="home-gallery__box">
                 @foreach($images as $image)
                 <a href="{{url('gallery')}}"class="home-gallery__box-container">
+                    
+                    @if(strpos($image->name, "/") !== false)
                     <img src="{{asset('storage/images/' . $image->name)}}">
+                    @elseif($image->file_path)
+                    <img src="{{$image->file_path}}">
+                    @endif
+
                     <div class="home-gallery__box-container-overlay">
                         <h5 class="home-gallery__box-container-overlay_title">
                             {!!$image->name!!}
