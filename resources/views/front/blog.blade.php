@@ -15,10 +15,13 @@
         <div class="blog-posts">
             @foreach($blogs as $blog)
             <div class="blog-posts-item">
-                <h4 class=blog-posts-item__title">
-                    {{$blog->title}}
-                </h4>
-                {{$blog->content}}
+                <i class="far fa-comment"></i>
+                <div class="blog-posts-item__text">
+                    <h4 class=blog-posts-item__text-title">
+                        {{$blog->title}}
+                    </h4>
+                    {{$blog->post}}
+                </div>
             </div>
             @endforeach
         </div>

@@ -11515,6 +11515,31 @@ body {
   padding: 0.5rem 2rem 2rem 0.5rem;
 }
 
+.blog-posts {
+  margin-left: 10rem;
+}
+.blog-posts-item {
+  display: flex;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: black 3px 3px 5px;
+  max-width: 90%;
+}
+.blog-posts-item .fa-comment {
+  font-size: 3rem;
+  margin: 1rem;
+  color: #98c5e1;
+}
+.blog-posts-item__text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-size: 1rem;
+}
+.blog-posts-item__text-title {
+  font-size: 2rem;
+}
+
 nav {
   width: 250px;
   position: fixed;

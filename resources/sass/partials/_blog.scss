@@ -1,0 +1,30 @@
+.blog {
+    &-posts {
+        margin-left: 10rem;
+        &-item {
+            display: flex;
+            margin-bottom: 1rem;
+            background-color: white;
+            box-shadow: black 3px 3px 5px;
+            max-width: 90%;
+            
+            .fa-comment {
+                font-size: 3rem;
+                margin  : 1rem;
+                color: $shade4;
+            }
+
+            &__text {
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                font-size:1rem;
+
+                &-title {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+}
