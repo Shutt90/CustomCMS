@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Blog;
 
 class BlogController extends Controller
 {
     public function index()
     {
 
-        $blog = blog::orderBy('id', 'desc')->get();
+        $blogs = Blog::orderBy('id', 'desc')->get();
 
         return view('front.blog', [
-            'blog' => $blog,
+            'blogs' => $blogs,
         ]);
     }
 }

@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
 
-    public function about()
+    public function index()
     {
-        $about = About::orderBy('id', 'asc')->first();
+        $about = About::first();
 
         return view('front.about', [
             'about' => $about,

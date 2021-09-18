@@ -20,6 +20,7 @@
                 </h4>
                 {{$blog->content}}
             </div>
+            @endforeach
         </div>
 
     </div>

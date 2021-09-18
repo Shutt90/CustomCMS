@@ -16,7 +16,7 @@
     <img src="{{asset('storage/images/' . $about->image)}}">
 </div>
 
-@else
+@endif
 
 @include('layouts.footer')
 @stop

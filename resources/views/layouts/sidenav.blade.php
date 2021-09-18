@@ -7,13 +7,13 @@
                 <a href="{{route('about')}}">About</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="#">Blog</a>
+                <a href="{{route('blog')}}">Blog</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="{{url('gallery')}}">Gallery</a>
+                <a href="{{route('gallery')}}">Gallery</a>
             </li>
             <li class="side-nav__items-list">
-                <a href="{{url('content')}}">content</a>
+                <a href="{{route('content')}}">content</a>
             </li>
         </ul>
     </div>
