@@ -33,7 +33,7 @@
             <a href="{{url('profile')}}">
                 <li class="nav-item">Profile</li>
             </a>
-            <a href="{{url('logout')}}">
+            <a href="{{route('logout')}}">
                 <li class="nav-item">Log Out</li>
             </a>
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -32,9 +33,19 @@ class LoginController extends Controller
         auth()->attempt($request->only('email', 'password'));
 
 
+        if(auth()->user()->admin) {
+            return redirect()->route('dashboard');
+        }
 
-        return redirect()->route('dashboard');
-
+        else {
+            return redirect()->route('blog');
+        }
+        
     }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
+      }
 
 }
