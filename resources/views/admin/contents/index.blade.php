@@ -10,16 +10,20 @@
     <div class="admin-contents__container">
         @foreach($contents as $content)
         <div class="admin-contents__container-section">
-            {{$content->title}}
             <a href="{{route('content.edit', $content->id)}}">
                 <i class="fas fa-pen-square"></i>
             </a>
-            <img src="{{asset('storage/images/' . $content->image)}}">
             <form method="POST" action="{{route('content.destroy', $content->id)}}">
                 @csrf
                 @method("DELETE")
                 <button onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash"></i></button>
             </form>
+            <div class="admin-contents__container-section-text">
+                <h3 class="admin-contents__container-section__title">{{$content->title}}</h3>
+                {{$content->content}}
+            </div>
+            <img src="{{asset('storage/images/' . $content->image)}}">
+
         </div>
         @endforeach
             

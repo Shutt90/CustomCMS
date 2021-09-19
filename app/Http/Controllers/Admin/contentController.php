@@ -87,7 +87,7 @@ class contentController extends Controller
                 }
 
                 $image = $request->image;
-                $imagename = time() . '_' . $request->file('image')->getClientOriginalName();
+                $imagename = time() . '_' . $request->image->getClientOriginalName();
                 $image->move($path, $imagename);
 
 
