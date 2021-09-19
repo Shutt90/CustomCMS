@@ -28,7 +28,7 @@
         @endguest
 
         @auth
-            <a href="{{url('dashboard')}}">
+            <a href="{{route('dashboard')}}">
                 <li class="nav-item">Dashboard</li>
             </a>
             <a href="{{url('profile')}}">

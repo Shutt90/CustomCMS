@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Term;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
+
 
 class termsController extends Controller
 {
@@ -24,7 +26,7 @@ class termsController extends Controller
     {
         $terms = Term::findorfail($id);
 
-        return view('admin.terms.edit', compact('term'));
+        return view('admin.terms.edit', compact('terms'));
     }
 
     /**
@@ -34,17 +36,15 @@ class termsController extends Controller
      * @param  \App\Models\Terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Term $term, int $id)
+    public function update(Request $request, int $id)
     {
-        $input = $request->all();
-        $validator = Validator::make($input);
-        if ($validator->fails()){
-            return redirect()->back()->withInput()->withErrors($validator);
-        }
 
-        $term=term::findOrFail($id);
-        $term->update($request);
+        Term::where('id', $id)
+            ->update([
+                'title' => $request->input('title'),
+                'content' => $request->input('content'),
+            ]);
 
-        return back();
+        return redirect('/admin/terms');
     }
 }

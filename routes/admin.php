@@ -23,7 +23,8 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/terms', [termsController::class, 'index'])->name('terms');
-    Route::put('/terms', [termsController::class, 'update'])->name('terms.edit');
+    Route::get('/terms/{edit}', [termsController::class, 'edit'])->name('terms.edit');
+    Route::put('/terms/update/{id}', [termsController::class, 'update'])->name('terms.update');
 
 });
 
