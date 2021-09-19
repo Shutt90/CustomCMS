@@ -5,8 +5,9 @@
         Contents
     </h3>
     <div class="create-contents__container">
-        {{ Form::open(array('route' => 'content.update', 'method' => 'POST', 'files' => true)) }}
+        {{ Form::open(array('route' => array('content.update', $contents->id), 'method' => 'POST', 'files' => true)) }}
         @csrf
+        @method('PUT')
         @include('admin.contents.layouts.form')
         {{ Form::close()}}
     </div>

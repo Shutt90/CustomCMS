@@ -25,7 +25,7 @@ class contentController extends Controller
 
     }
 
-    public function edit($id)
+    public function edit(int $id)
     {
 
         $contents = Content::findorfail($id);
@@ -64,28 +64,38 @@ class contentController extends Controller
         
     }
 
-    public function update($id, Request $request)
+    public function update(Request $request, int $id)
     {
+        $content = Content::findorfail($id);
 
-        $input = $request->all();
-        $rules  = [
-            "image" => "image|mimes:jpg,png,jpeg"
-        ];
-        $validator = Validator::make($input, $rules);
-        if ($validator->fails()){
-            return redirect()->back()->withInput()->withErrors($validator);
-        }
+            if($request->title != "") {
+                $content->update(['title' => $request->title]);
+            }
 
-        $content=content::findOrFail($id);
-        $content->update($request->except(['image']));
+            if($request->content != "") {
+                $content->update(['content' => $request->content]);
+            }
 
-        if($request->hasFile('image')) {
-            $this->imagedelete($content['image'], 'contents');
-            $upload = $this->imageupload($input, 'image', 'contents', 'null', '600');
-            content::where('id', $id)->update(array('image' => $upload));
-        }
 
-        return back();
+            if ($request->image != "") {
+                $path = storage_path('app/public/images/'); 
+
+
+                if ($content->image != '' && $content->image != null) {
+                    $fileOld = $path . $content->image;
+                    unlink($fileOld);
+                }
+
+                $image = $request->image;
+                $imagename = time() . '_' . $request->file('image')->getClientOriginalName();
+                $image->move($path, $imagename);
+
+
+                $content->update(['image' => $imagename]);
+                
+            }
+
+        return redirect('/admin/content');
     }
 
     public function destroy(int $id)
