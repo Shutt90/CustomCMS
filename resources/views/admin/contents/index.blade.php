@@ -26,8 +26,11 @@
                     {{$content->page_name}}
                 </p>
             </div>
+            @if($content->image != "")
             <img src="{{asset('storage/images/' . $content->image)}}">
-
+            @elseif($content->file_path != "")
+            <img src={{$content->file_path}}>
+            @endif
         </div>
         @endforeach
             
