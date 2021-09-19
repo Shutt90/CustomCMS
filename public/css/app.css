@@ -11612,6 +11612,65 @@ nav {
   align-items: center;
 }
 
+.admin-contents__title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+}
+.admin-contents__title a {
+  text-align: left;
+  color: black;
+  font-size: 1.5rem;
+}
+.admin-contents__title a:hover {
+  font-weight: 700;
+}
+.admin-contents__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-contents__container .fa-pen-square {
+  font-size: 2.2rem;
+  padding: 2px;
+}
+.admin-contents__container button {
+  background: transparent;
+  border: none;
+  margin: 0 1rem;
+}
+.admin-contents__container button .fa-trash {
+  font-size: 2rem;
+  padding: 2px;
+  color: red;
+}
+.admin-contents__container-section {
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+  width: 80%;
+  height: 280px;
+  padding: 1rem;
+  border: #b9eec5 2px solid;
+  box-shadow: #9dddc8 2px 2px 5px;
+}
+.admin-contents__container-section-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.admin-contents__container-section-text__page {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-style: italic;
+}
+.admin-contents__container-section img {
+  width: 250px;
+  height: 250px;
+}
+
 .image-title {
   font-size: 3rem;
   margin-bottom: 2rem;

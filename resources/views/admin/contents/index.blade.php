@@ -21,6 +21,10 @@
             <div class="admin-contents__container-section-text">
                 <h3 class="admin-contents__container-section__title">{{$content->title}}</h3>
                 {{$content->content}}
+
+                <p class="admin-contents__container-section-text__page">
+                    {{$content->page_name}}
+                </p>
             </div>
             <img src="{{asset('storage/images/' . $content->image)}}">
 
