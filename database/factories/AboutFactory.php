@@ -20,11 +20,13 @@ class AboutFactory extends Factory
      * @return array
      */
     public function definition()
+
     {
+
         return [
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph(3),
-            'image' => $this->faker->image(),
+            'file_path' => $this->faker->imageUrl(),
         ];
     }
 }
