@@ -32,7 +32,7 @@
                 <li class="nav-item">Dashboard</li>
             </a>
             <a href="{{url('profile')}}">
-                <li class="nav-item">Profile</li>
+                <li class="nav-item">{{Auth::user()->fname}} {{Auth::user()->surname}}</li>
             </a>
             <a href="{{route('logout')}}">
                 <li class="nav-item">Log Out</li>

@@ -68,6 +68,12 @@ class contentController extends Controller
     {
         $content = Content::findorfail($id);
 
+        $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'image' => 'image|mimes:jpg,png,jpeg'
+        ]);
+
             if($request->title != "") {
                 $content->update(['title' => $request->title]);
             }
