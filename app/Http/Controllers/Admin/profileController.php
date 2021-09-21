@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Cache;
+
+
 
 use Illuminate\Http\Request;
 
@@ -36,9 +40,8 @@ class profileController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return back()
-        ->with('success', 'Profile updated');
-
+        Cache::flush();
+        return back()->with('Profile Updated', 'success');
 
     }
     

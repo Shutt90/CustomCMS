@@ -25,7 +25,8 @@
 
         @endauth
 
-        @include("admin.layouts.errors")
+        @include('admin.layouts.errors')
+        @include('admin.layouts.success')
 
 </section>
 @include('layouts.footer')

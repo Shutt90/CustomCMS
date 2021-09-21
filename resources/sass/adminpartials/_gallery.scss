@@ -24,21 +24,15 @@
         }
 
         &__error {
-            display: flex;                        
+            position: fixed;
             background-color: darkred;
-            height: 3rem;
-            font-size: 1.5rem;
-            position: absolute;
-            z-index: 10;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            top: 0;
+            left: 0;
+             z-index: 10;
             border: black 2px solid;
             border-radius: 2rem;
             padding:1.5rem;
-            align-items:center;
-            justify-content: center;
-
         }
     }
 

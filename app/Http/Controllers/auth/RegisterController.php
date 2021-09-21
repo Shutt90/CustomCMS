@@ -26,7 +26,7 @@ class RegisterController extends Controller
             'fname' => 'required|max:255',
             'surname' => 'required|max:255',
             'username' => 'required|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'required|email|unique:users|max:255',
             'password' => 'required|confirmed',
         ]);
 
@@ -40,8 +40,9 @@ class RegisterController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', 'You have been registered');
 
+        
     }
 
 }
