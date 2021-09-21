@@ -15,27 +15,29 @@ class profileController extends Controller
 
         $user = Auth::user();
         
-        return view('admin.profile', compact('user'));
+        return view('admin.profile.index', compact('user'));
 
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
 
-        $request->validate(request(), [
-            'email' => 'email',
-            'password' => 'required|min:8|confirmed'
+        $request->validate([
+            'email' => 'unique:users|email',
+            'password' => 'required|min:8|confirmed',
         ]);
 
+        $user = Auth::user();
         $user->update([
+            'username' => $request->username,
             'fname' => $request->fname,
             'surname' => $request->surname,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
         ]);
 
         return back()
-        ->with('sucess', 'Profile updated');
+        ->with('success', 'Profile updated');
 
 
     }
