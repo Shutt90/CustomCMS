@@ -31,7 +31,7 @@
             <a href="{{route('dashboard')}}">
                 <li class="nav-item">Dashboard</li>
             </a>
-            <a href="{{url('profile')}}">
+            <a href="{{route('profile')}}">
                 <li class="nav-item">{{Auth::user()->fname}} {{Auth::user()->surname}}</li>
             </a>
             <a href="{{route('logout')}}">
