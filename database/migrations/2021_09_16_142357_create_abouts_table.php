@@ -17,7 +17,8 @@ class CreateAboutsTable extends Migration
             $table->id();
             $table->string("title");
             $table->longtext("content");
-            $table->string("image")->nullable();
+            $table->string("image", 191)->nullable();
+            $table->string('file_path', 191)->nullable();
             $table->timestamps();
         });
     }
