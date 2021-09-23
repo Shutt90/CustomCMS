@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\contentController;
 use App\Http\Controllers\Admin\dashboardController;
 use App\Http\Controllers\Admin\fileUploadController;
 use App\Http\Controllers\Admin\blogController;
-use App\Http\Controllers\Admin\aboutController;
+use App\Http\Controllers\Admin\pageController;
 use App\Http\Controllers\Admin\termsController;
 use App\Http\Controllers\Admin\profileController;
 use App\Http\Controllers\Auth\LoginController;
@@ -18,7 +18,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
         '/content' => contentController::class,
         '/blog' => blogController::class,
         '/gallery' => fileUploadController::class,
-        '/about' => aboutController::class,
+        '/page' => pageController::class,
     ]);
 
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');

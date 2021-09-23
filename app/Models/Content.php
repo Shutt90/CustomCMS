@@ -15,5 +15,9 @@ class Content extends Model
         'image'
     ];
 
+    public function children()
+    {
+        $this->hasMany(Page::class);
+    }
 
 }

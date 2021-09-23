@@ -36,7 +36,7 @@ Route::group(['middleware' => 'web'], function() {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
     Route::get('/content', [ContentController::class, 'index'])->name('content');
-    Route::get('/about', [AboutController::class, 'index'])->name('about');
+    Route::get('/', [PagesController::class, 'about'])->name('about');
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 });
