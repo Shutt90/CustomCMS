@@ -7,9 +7,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\front\ContentController;
 //Front Controllers
-use App\Http\Controllers\front\HomeController;
-use App\Http\Controllers\front\GalleryController;
-use App\Http\Controllers\front\AboutController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\GalleryController;
+use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\BlogController;
 
 
@@ -36,7 +36,7 @@ Route::group(['middleware' => 'web'], function() {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
     Route::get('/content', [ContentController::class, 'index'])->name('content');
-    Route::get('/', [PagesController::class, 'about'])->name('about');
+    Route::get('/about', [PageController::class, 'about'])->name('about');
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 });
