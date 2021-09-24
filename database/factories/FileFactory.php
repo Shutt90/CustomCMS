@@ -22,11 +22,10 @@ class FileFactory extends Factory
     public function definition()
     {
 
-        $storage_path = public_path('storage/images');
-
         return [
             'name' => $this->faker->text(10),
             'file_path' => $this->faker->imageUrl(),
+            'category_id' => rand(1, 3),
         ];
     }
 }

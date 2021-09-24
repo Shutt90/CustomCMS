@@ -16,6 +16,6 @@ class File extends Model
 
     private function relationship()
     {
-        $this->hasMany(Category::class, 'categorys_id', 'id')
+        $this->hasMany(Category::class, 'categorys_id', 'id');
     }
 }

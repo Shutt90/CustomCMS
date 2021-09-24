@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\File;
+use App\Models\Category;
 
 class GalleryController extends Controller
 {
@@ -13,8 +14,9 @@ class GalleryController extends Controller
     {
 
         $images = File::orderBy('id', 'desc')->get();
+        $categories = Category::orderBy('id', 'desc')->get();
         
-        return view('front.gallery', compact('images'));
+        return view('front.gallery', compact('images', $categories));
 
     }
 }
