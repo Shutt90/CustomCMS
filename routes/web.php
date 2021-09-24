@@ -12,6 +12,8 @@ use App\Http\Controllers\Front\GalleryController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\BlogController;
 
+//test
+
 
 /*
 |--------------------------------------------------------------------------
