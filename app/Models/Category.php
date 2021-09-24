@@ -4,18 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\File;
 
-class File extends Model
+class Category extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'file_path',
+        'title',
     ];
 
     private function relationship()
     {
-        $this->hasMany(Category::class, 'categorys_id', 'id')
+        $this->belongsTo(File::class);
     }
 }
