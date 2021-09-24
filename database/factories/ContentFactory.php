@@ -25,7 +25,6 @@ class ContentFactory extends Factory
             'title' => $this->faker->sentence(1, true),
             'content' => $this->faker->paragraph(5, true),
             'file_path' => $this->faker->imageUrl(),
-            
         ];
     }
 

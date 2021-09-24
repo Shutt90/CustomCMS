@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\About;
+use App\Models\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AboutFactory extends Factory
+class PageFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = About::class;
+    protected $model = Page::class;
 
     /**
      * Define the model's default state.

@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\Content;
 use App\Models\Blog;
 use App\Models\File;
-use App\Models\About;
+use App\Models\Page;
 use App\Models\Term;
 
 class DatabaseSeeder extends Seeder
@@ -21,10 +21,12 @@ class DatabaseSeeder extends Seeder
     {
         //10 users with password of password
         User::factory(10)->create();
-        Content::factory(5)->create();
         Blog::factory(10)->create();
         File::factory(10)->create();
-        About::factory(1)->create();
+        Page::factory(1)->create();
         Term::factory(1)->create();
+        foreach(range(1, 3) as $int) {
+            Content::factory()->create(['page_id' => $int]);
+          }
     }
 }

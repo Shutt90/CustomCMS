@@ -26,7 +26,7 @@ class FileFactory extends Factory
 
         return [
             'name' => $this->faker->text(10),
-            'file_path' => $this->faker->image($storage_path),
+            'file_path' => $this->faker->imageUrl(),
         ];
     }
 }
