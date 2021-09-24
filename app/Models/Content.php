@@ -17,7 +17,7 @@ class Content extends Model
 
     public function children()
     {
-        $this->hasMany(Page::class);
+        $this->hasOne(Page::class);
     }
 
 }

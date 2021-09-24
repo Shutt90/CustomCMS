@@ -10,7 +10,6 @@
 <div class="about-content">
     {{$about->content}}
 </div>
-@dd($about)
 @if($about->image)
 <div class="about-image">
     <img src="{{asset('public/storage/images/' . $about->image)}}">

@@ -10,8 +10,11 @@ class HomeController extends Controller
 {
     public function index()
     {
+
+        $contents = Content::where('page_id', '1')->first();
+
         return view('front.index', [
-            'content' => Content::where('id', '1')
+            'contents' => $contents, 
         ]);
     }
 
