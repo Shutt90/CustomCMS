@@ -31,15 +31,25 @@
                 <button onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash"></i></button>
             </form>
             <img src="{{asset('storage/images/' . $image->file_path)}}" alt="{{$image->name}}">
-            <form method="PUT" action="{{route('gallery.update', $image->id)}}">
-                @csrf
-                @method('POST')
-                <select onchange="this.form.submit();" name="category">
-                    @foreach($category as $item)
-                    <option @if($image->category_id === $item->id) selected="selected" @endif>{{$item->title}}</option>
-                    @endforeach
-                </select>
-            </form>
+            <div class="flex flex-column">
+                <form method="PUT" action="{{route('gallery.update', $image->id)}}">
+                    @csrf
+                    @method('PUT')   
+                    <label for="category">Name</label> 
+                    <input type="text" value="{{$image->name}}">
+                    <input type="submit"></input>
+                </form>
+                <form method="PUT" action="{{route('gallery.update', $image->id)}}">
+                    @csrf
+                    @method('PUT')
+                    <label for="category">Category</label>
+                    <select onchange="this.form.submit();" name="category">
+                        @foreach($category as $item)
+                        <option @if($image->category_id === $item->id) selected="selected" @endif>{{$item->title}}</option>
+                        @endforeach
+                    </select>
+                </form>
+            </div>
         </div>
         @endforeach
     </div>

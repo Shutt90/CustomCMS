@@ -46,27 +46,27 @@ class fileUploadController extends Controller
         $images = File::with('categoryRel')->get();
         $category = Category::with('fileRel')->orderBy('id', 'asc')->get();
 
-        $categoryArray = [];
-
-        foreach($category as $item) {
-            $categoryArray[$item->id] = $item->title;
-        }
-
-        return view('admin.gallery.index', compact('images', 'category', 'categoryArray'));
+        return view('admin.gallery.index', compact('images', 'category'));
     }
 
-    public function update(int $id, Request $request)
+    public function update(Request $request, int $id)
     {
+
+        dd($request);
+
         $request->validate([
-            'category_id' => 'required'
+            'category_id' => 'integer',
+            'title' => 'string|max:20',
         ]);
 
-        $category = Category::findorfail($id);
+        File::find('id', $id)
+        ->update([
+            'category_id' => $request->input('category_id'),
+            'title' => $request->input('title'),
+        ]);
 
         Cache::flush();
-        return $category->update([
-            'category_id' => $request->category_id,
-        ])->with('success', 'Category Updated');
+        return back()->with('success', 'Category Updated');;
 
     }
 

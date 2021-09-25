@@ -20,7 +20,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
         '/blog' => blogController::class,
         '/gallery' => fileUploadController::class,
         '/page' => pageController::class,
-        '/categories/' => categoryController::class,
+        '/categories' => categoryController::class,
     ]);
 
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
