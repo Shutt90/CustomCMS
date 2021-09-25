@@ -14,8 +14,8 @@ class Category extends Model
         'title',
     ];
 
-    private function relationship()
+    public function fileRel()
     {
-        $this->belongsTo(File::class);
+        return $this->belongsTo(File::class);
     }
 }

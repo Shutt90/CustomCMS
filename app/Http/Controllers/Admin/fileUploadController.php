@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\File;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
-
+use App\Models\Category;
 
 class fileUploadController extends Controller
 {
@@ -14,8 +13,9 @@ class fileUploadController extends Controller
     {
 
         $images = File::with('categoryRel')->get();
+        $category = Category::with('fileRel')->orderBy('id', 'asc')->get();
 
-        return view('admin.gallery.index', compact('images'));
+        return view('admin.gallery.index', compact('images', 'category'));
 
     }
 
@@ -38,6 +38,36 @@ class fileUploadController extends Controller
             ->with('Success', 'Image has successfully been uploaded')
             ->with('file', $fileName);
         }
+    }
+
+    public function show()
+    {
+
+        $images = File::with('categoryRel')->get();
+        $category = Category::with('fileRel')->orderBy('id', 'asc')->get();
+
+        $categoryArray = [];
+
+        foreach($category as $item) {
+            $categoryArray[$item->id] = $item->title;
+        }
+
+        return view('admin.gallery.index', compact('images', 'category', 'categoryArray'));
+    }
+
+    public function update(int $id, Request $request)
+    {
+        $request->validate([
+            'category_id' => 'required'
+        ]);
+
+        $category = Category::findorfail($id);
+
+        Cache::flush();
+        return $category->update([
+            'category_id' => $request->category_id,
+        ])->with('success', 'Category Updated');
+
     }
 
     public function destroy(int $id) 

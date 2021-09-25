@@ -30,9 +30,16 @@
                 @method("DELETE")
                 <button onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash"></i></button>
             </form>
-            <img src="{{asset('storage/images/' . $image->fail_path)}}" alt="imagenonoshow">
-            <form method="POST" action="{{route('category.update' . $image->categoryRel->first()->id)}}">
-                <select name="">
+            <img src="{{asset('storage/images/' . $image->file_path)}}" alt="{{$image->name}}">
+            <form method="PUT" action="{{route('gallery.update', $image->id)}}">
+                @csrf
+                @method('POST')
+                <select onchange="this.form.submit();" name="category">
+                    @foreach($category as $item)
+                    <option @if($image->category_id === $item->id) selected="selected" @endif>{{$item->title}}</option>
+                    @endforeach
+                </select>
+            </form>
         </div>
         @endforeach
     </div>
