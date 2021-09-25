@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 //Auth Controllers
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\front\ContentController;
+use App\Http\Controllers\Front\ContentController;
 //Front Controllers
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\GalleryController;

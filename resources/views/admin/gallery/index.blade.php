@@ -32,7 +32,7 @@
             </form>
             <img src="{{asset('storage/images/' . $image->fail_path)}}" alt="imagenonoshow">
             <form method="POST" action="{{route('category.update' . $image->categoryRel->first()->id)}}">
-                <select name=""
+                <select name="">
         </div>
         @endforeach
     </div>

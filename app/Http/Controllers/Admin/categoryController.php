@@ -13,7 +13,7 @@ class categoryController extends Controller
     {
         $category = Category::orderBy('id', 'desc')->get();
 
-        return view('admin.categories', compact('category'));
+        return view('admin.categories.index', compact('category'));
 
     }
 
@@ -37,26 +37,30 @@ class categoryController extends Controller
 
     }
 
-    public function update(Request $request)
+    public function update(Request $request, int $id)
     {
         $request->validate([
-            'title' => 'required|unique:category'
+            'title' => 'required'
         ]);
+
+        $category = Category::findorfail($id);
 
         $category->update([
             'title' => $request->title,
-        ])
+        ]);
 
         Cache::flush();
-        return back()->with('success', 'Category Updated');
+        return redirect('admin/categories')->with('success', 'Category Updated');
 
     }
 
-    public function destroy()
+    public function destroy(int $id)
     {
         $category = Category::findorfail($id);
 
-        $category->delete()->with('success', 'Category Deleted');
+        $category->delete();
+
+        return redirect('admin/categories')->with('success', 'Category Deleted');
 
     }
     

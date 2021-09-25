@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\pageController;
 use App\Http\Controllers\Admin\termsController;
 use App\Http\Controllers\Admin\profileController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\categoryController;
+use App\Http\Controllers\Admin\categoryController;
 
 //Admin controllers
 Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
@@ -20,7 +20,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
         '/blog' => blogController::class,
         '/gallery' => fileUploadController::class,
         '/page' => pageController::class,
-        '/categories' => categoriesController::class,
+        '/categories' => categoryController::class,
     ]);
 
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
