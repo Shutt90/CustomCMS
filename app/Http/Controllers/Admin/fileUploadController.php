@@ -13,7 +13,7 @@ class fileUploadController extends Controller
     public function index()
     {
 
-        $images = File::orderBy('id', 'desc')->get();
+        $images = File::with('categoryRel')->get();
 
         return view('admin.gallery.index', compact('images'));
 

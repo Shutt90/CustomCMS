@@ -12,10 +12,11 @@ class File extends Model
     protected $fillable = [
         'name',
         'file_path',
+        'category_id'
     ];
 
-    private function relationship()
+    public function categoryRel()
     {
-        $this->hasMany(Category::class, 'categorys_id', 'id');
+        return $this->hasMany(Category::class, 'id', 'category_id');
     }
 }

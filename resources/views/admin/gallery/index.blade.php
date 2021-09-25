@@ -7,13 +7,8 @@
             @method("POST")
             @csrf
 
-            @if ($message = Session::get('success'))
-            <div class="image-container__success">
-                {{ $message }}
-            </div>
-            @endif
-
             @include("admin.layouts.errors")
+            @include("admin.layouts.success")
 
             <div class="image-file">
                 <label class="image-file__label" for="chooseImage">Select Image</label>
@@ -35,7 +30,7 @@
                 @method("DELETE")
                 <button onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash"></i></button>
             </form>
-            <img src="{{asset('storage/images/' . $image->name)}}" alt="imagenonoshow">
+            <img src="{{asset('storage/images/' . $image->fail_path)}}" alt="imagenonoshow">
         </div>
         @endforeach
     </div>

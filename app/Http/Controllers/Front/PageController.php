@@ -10,7 +10,7 @@ class PageController extends Controller
 {
     public function Home()
     {
-        $home = Content::where('page_name', 'home');
+        $home = Content::where('page_id', 1);
 
         return view('front.home', [
             'home' => $home,
@@ -19,7 +19,7 @@ class PageController extends Controller
 
     public function about()
     {
-        $about = Content::where('page_name', 'about');
+        $about = Content::where('page_id', 2);
 
         return view('front.about', [
             'about' => $about,
@@ -28,7 +28,7 @@ class PageController extends Controller
 
     public function terms()
     {
-        $terms = Content::where('page_name', 'terms');
+        $terms = Content::where('page_id', '3');
 
         return view('front.terms', [
             'terms' => $terms,
