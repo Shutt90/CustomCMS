@@ -17,7 +17,7 @@ class CreateFilesTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('file_path', 191)->nullable();
-            $table->bigInteger('category_id');
+            $table->bigInteger('category_id')->nullable();
             $table->timestamps();
         });
     }

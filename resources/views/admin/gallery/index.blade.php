@@ -31,6 +31,8 @@
                 <button onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash"></i></button>
             </form>
             <img src="{{asset('storage/images/' . $image->fail_path)}}" alt="imagenonoshow">
+            <form method="POST" action="{{route('category.update' . $image->categoryRel->first()->id)}}">
+                <select name=""
         </div>
         @endforeach
     </div>
