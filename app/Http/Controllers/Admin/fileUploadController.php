@@ -22,7 +22,8 @@ class fileUploadController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'mimes:jpg,png,jpeg'
+            'name' => 'required',
+            'file' => 'required|mimes:jpg,png,jpeg'
         ]);
 
         $fileModel = new File;
@@ -73,7 +74,7 @@ class fileUploadController extends Controller
     public function destroy(int $id) 
     {
 
-        $file = File::find($id);
+        $file = File::find('id', $id);
         $file->delete()->with("success", "Content has been deleted");
 
         return back();

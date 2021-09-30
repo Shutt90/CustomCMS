@@ -14,6 +14,7 @@
                 <label class="image-file__label" for="chooseImage">Select Image</label>
 
                 <input type="file" name="file" class="image-file__input" id="chooseImage">
+                <input type="text" name="name" class="image-file__input">
             </div>
 
             <button type="submit" name="submit" class="image-file__submit">
@@ -32,18 +33,18 @@
             </form>
             <img src="{{asset('storage/images/' . $image->file_path)}}" alt="{{$image->name}}">
             <div class="flex flex-column">
-                <form method="PUT" action="{{route('gallery.update', $image->id)}}">
+                <form method="PUT" action="{{route('gallery.update', $image->name, $image->id)}}">
                     @csrf
                     @method('PUT')   
                     <label for="category">Name</label> 
                     <input type="text" value="{{$image->name}}">
                     <input type="submit"></input>
                 </form>
-                <form method="PUT" action="{{route('gallery.update', $image->id)}}">
+                <form method="PUT" action="{{route('gallery.update', $image->category_id, $image->id)}}">
                     @csrf
                     @method('PUT')
                     <label for="category">Category</label>
-                    <select onchange="this.form.submit();" name="category">
+                    <select name="category">
                         @foreach($category as $item)
                         <option @if($image->category_id === $item->id) selected="selected" @endif>{{$item->title}}</option>
                         @endforeach
