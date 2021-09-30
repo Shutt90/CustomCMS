@@ -52,23 +52,22 @@ class fileUploadController extends Controller
 
     public function update(Request $request, int $id)
     {
-
-        dd($request);
-
-        $request->validate([
+        $validated = $request->validate([
             'category_id' => 'integer',
-            'title' => 'string|max:20',
+            'title' => 'string',
         ]);
 
-        File::find('id', $id)
-        ->update([
-            'category_id' => $request->input('category_id'),
-            'title' => $request->input('title'),
-        ]);
 
-        Cache::flush();
-        return back()->with('success', 'Category Updated');;
 
+        if($validated) {
+            File::findOrFail($id)
+            ->update([
+                'category_id' => $request->category_id,
+                'title' => $request->title,
+            ]);
+
+            return back()->with('success', 'Category Updated');;
+        }
     }
 
     public function destroy(int $id) 

@@ -33,22 +33,18 @@
             </form>
             <img src="{{asset('storage/images/' . $image->file_path)}}" alt="{{$image->name}}">
             <div class="flex flex-column">
-                <form method="PUT" action="{{route('gallery.update', $image->name, $image->id)}}">
+                <form method="POST" action="{{route('gallery.update', $image->id)}}">
                     @csrf
                     @method('PUT')   
-                    <label for="category">Name</label> 
-                    <input type="text" value="{{$image->name}}">
-                    <input type="submit"></input>
-                </form>
-                <form method="PUT" action="{{route('gallery.update', $image->category_id, $image->id)}}">
-                    @csrf
-                    @method('PUT')
+                    <label for="title">Name</label> 
+                    <input type="text" name="title" placeholder="{{$image->name}}">
                     <label for="category">Category</label>
-                    <select name="category">
+                    <select name="category_id">
                         @foreach($category as $item)
-                        <option @if($image->category_id === $item->id) selected="selected" @endif>{{$item->title}}</option>
+                        <option value="{{$item->id}} "@if($image->category_id === $item->id) selected="selected" @endif>{{$item->title}}</option>
                         @endforeach
                     </select>
+                    <input type="submit"></input>
                 </form>
             </div>
         </div>
