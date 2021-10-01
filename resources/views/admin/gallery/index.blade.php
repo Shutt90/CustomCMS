@@ -3,7 +3,7 @@
         Image Uploader
     </h3>    
     <div class="image-container">
-        <form action="{{route('gallery.store')}}" method="POST" enctype="multipart/form-data">
+        {{Form::open(array('route' => 'gallery.store' ,'files'=>'true'))}}
             @method("POST")
             @csrf
 
@@ -13,14 +13,14 @@
             <div class="image-file">
                 <label class="image-file__label" for="chooseImage">Select Image</label>
 
-                <input type="file" name="file" class="image-file__input" id="chooseImage">
+                <input type="file" name="file" class="image-file__input">
                 <input type="text" name="name" class="image-file__input">
             </div>
 
             <button type="submit" name="submit" class="image-file__submit">
                 Upload Image
             </button>
-        </form>
+        {{Form::close()}}
     </div>
 
     <div class="images">
@@ -37,7 +37,7 @@
                     @csrf
                     @method('PUT')   
                     <label for="title">Name</label> 
-                    <input type="text" name="title" placeholder="{{$image->name}}">
+                    <input type="text" name="name" placeholder="{{$image->name}}">
                     <label for="category">Category</label>
                     <select name="category_id">
                         @foreach($category as $item)

@@ -26,18 +26,16 @@ class fileUploadController extends Controller
             'file' => 'required|mimes:jpg,png,jpeg'
         ]);
 
-        $fileModel = new File;
-
-        if($request->file()) {
-            $fileName = time() . '_' . $request->file->getClientOriginalName();
+        if($request->file('file')) {
+            $fileModel = new File;
+            $fileName = $request->name;
             $filePath = $request->file('file')->storeAs('images', $fileName, 'public');
-            $fileModel->name = time() . '_' . $request->file->getClientOriginalName();
+            $fileModel->name = $fileName;
             $fileModel->file_path = '/storage/' .  $filePath;
             $fileModel->save();
 
             return back()
-            ->with('Success', 'Image has successfully been uploaded')
-            ->with('file', $fileName);
+            ->with('Success', 'Image has successfully been uploaded');
         }
     }
 
@@ -56,8 +54,6 @@ class fileUploadController extends Controller
             'category_id' => 'integer',
             'title' => 'string',
         ]);
-
-
 
         if($validated) {
             File::findOrFail($id)
