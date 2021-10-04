@@ -22,9 +22,12 @@ class ContentFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(1, true),
-            'content' => $this->faker->paragraph(5, true),
-            'file_path' => $this->faker->imageUrl(),
+            'title' => $this->faker->sentence(1),
+            'content' => $this->faker->paragraph(5),
+            'tab_title' => $this->faker->sentence(1),
+            'meta_title' => $this->faker->sentence(1),
+            'meta_description' => $this->faker->sentence(10),
+            'meta_keywords' => $this->faker->sentence(5),
         ];
     }
 

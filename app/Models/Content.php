@@ -12,7 +12,12 @@ class Content extends Model
     protected $fillable = [
         'title',
         'content',
-        'image'
+        'image',
+        'file_path',
+        'tab_title',
+        'meta_title',
+        'meta_description',
+        'meta_keywords'
     ];
 
 }

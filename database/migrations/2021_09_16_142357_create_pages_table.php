@@ -17,6 +17,7 @@ class CreatePagesTable extends Migration
             $table->id();
             $table->string("title");
             $table->longtext("content");
+            $table->string('tab_title', 30)->nullable();
             $table->string("image", 191)->nullable();
             $table->string('file_path', 191)->nullable();
             $table->timestamps();

@@ -17,6 +17,10 @@ class CreateTermsTable extends Migration
             $table->id()->unique();
             $table->text('title');
             $table->longtext('content');
+            $table->text('tab_title', 30)->nullable();
+            $table->text('meta_title')->nullable();
+            $table->text('meta_decription')->nullable();
+            $table->text('meta_keywords')->nullable();
             $table->timestamps();
         });
     }

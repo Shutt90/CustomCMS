@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Http\Controllers\Controller;
-use App\Models\File;
-use Illuminate\Validation\Validator;
 
 class contentController extends Controller
 {
@@ -28,7 +26,7 @@ class contentController extends Controller
     public function edit(int $id)
     {
 
-        $contents = Content::findorfail($id);
+        $contents = Content::findOrFail($id);
 
         return view('admin.contents.edit', compact('contents'));
 
@@ -40,16 +38,22 @@ class contentController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'image' => 'image|mimes:jpg,png,jpeg'
-        ]);
-
-        Content::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'image' => $request->image,
+            'image' => 'max:255',
+            'file_path' => 'image|mimes:jpg,png,jpeg',
+            'tab_title' => 'required|max:30',
+            'meta_title' => 'required|max:30',
+            'meta_description' => 'required',
+            'meta_keywords' => 'required',
         ]);
 
         $fileModel = new Content;
+
+        $fileModel->title = $request->title;
+        $fileModel->content = $request->content;
+        $fileModel->tab_title = $request->tab;
+        $fileModel->meta_title = $request->meta_title;
+        $fileModel->meta_description = $request->meta_description;
+        $fileModel->meta_keywords = $request->meta_keywords;
 
         if($request->file()) {
             $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
@@ -66,42 +70,48 @@ class contentController extends Controller
 
     public function update(Request $request, int $id)
     {
-        $content = Content::findorfail($id);
 
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'image' => 'image|mimes:jpg,png,jpeg'
+            'image' => 'max:255',
+            'file_path' => 'image|mimes:jpg,png,jpeg',
+            'tab_title' => 'required|max:30',
+            'meta_title' => 'required|max:30',
+            'meta_description' => 'required',
+            'meta_keywords' => 'required',
         ]);
 
-            if($request->title != "") {
-                $content->update(['title' => $request->title]);
-            }
-
-            if($request->content != "") {
-                $content->update(['content' => $request->content]);
-            }
-
+        if($validated) {
+            $content = Content::findOrFail($id);
+            $content->update([
+                'title' => $request->title,
+                'content' => $request->content,
+                'tab_title' => $request->tab_title,
+                'meta_title' => $request->meta_title,
+                'meta_description' => $request->meta_description,
+                'meta_keywords' => $request->meta_keywords,
+            ]);
 
             if ($request->image != "") {
                 $path = storage_path('app/public/images/'); 
-
-
+    
+    
                 if ($content->image != '' && $content->image != null) {
                     $fileOld = $path . $content->image;
                     unlink($fileOld);
                 }
-
-                $image = $request->image;
-                $imagename = time() . '_' . $request->image->getClientOriginalName();
+    
+                $image = $request->file_path;
+                $imagename = time() . '_' . $request->file_path->getClientOriginalName();
                 $image->move($path, $imagename);
+    
+    
+                $content->update(['file_path' => $imagename]);
+            };
 
-
-                $content->update(['image' => $imagename]);
-                
-            }
-
-        return redirect('/admin/content');
+            return back();
+        };
     }
 
     public function destroy(int $id)

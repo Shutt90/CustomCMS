@@ -19,7 +19,11 @@ class CreateContentsTable extends Migration
             $table->longtext("content");
             $table->string("image", 191)->nullable();
             $table->string("file_path", 191)->nullable();
-            $table->string("page_id")->nullable();
+            $table->string("page_id")->autoIncrement();
+            $table->string("tab_title");
+            $table->string("meta_title");
+            $table->string("meta_description");
+            $table->string("meta_keywords");
             $table->timestamps();
         });
     }

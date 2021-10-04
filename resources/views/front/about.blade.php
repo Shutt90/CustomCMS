@@ -1,5 +1,5 @@
 @extends('layouts.header')
-@section('title', 'About')
+@section('title', {{$content->tab_title}})
 
 @section('content')
 

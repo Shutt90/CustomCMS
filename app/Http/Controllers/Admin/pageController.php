@@ -38,16 +38,22 @@ class pageController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'image' => 'image|mimes:jpg,png,jpeg'
-        ]);
-
-        Page::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'image' => $request->image,
+            'image' => 'max:255',
+            'file_path' => 'image|mimes:jpg,png,jpeg',
+            'tab_title' => 'required|max:30',
+            'meta_title' => 'required|max:30',
+            'meta_description' => 'required',
+            'meta_keywords' => 'required',
         ]);
 
         $fileModel = new Page;
+
+        $fileModel->title = $request->title;
+        $fileModel->content = $request->content;
+        $fileModel->tab_title = $request->tab;
+        $fileModel->meta_title = $request->meta_title;
+        $fileModel->meta_description = $request->meta_description;
+        $fileModel->meta_keywords = $request->meta_keywords;
 
         if($request->file()) {
             $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
@@ -65,21 +71,25 @@ class pageController extends Controller
     public function update($id, Request $request)
     {
 
-        $page = Page::findorfail($id);
+        $validated = $request->validate([
+                'title' => 'max:255',
+                'image' => 'max:255',
+                'file_path' => 'image|mimes:jpg,png,jpeg',
+                'tab_title' => 'max:30',
+                'meta_title' => 'max:30',
+            ]);
 
-        $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required',
-            'image' => 'image|mimes:jpg,png,jpeg'
-        ]);
-
-            if($request->title != "") {
-                $page->update(['title' => $request->title]);
-            }
-
-            if($request->page != "") {
-                $page->update(['page' => $request->page]);
-            }
+            if($validated) {
+                $page = Page::findorfail($id)
+                    ->update([
+                        'title' => $request->title,
+                        'content' => $request->content,
+                        'tab_title' => $request->tab,
+                        'meta_title' => $request->meta_title,
+                        'meta_description' => $request->meta_description,
+                        'meta_keywords' => $request->meta_keywords,
+                    ]);
+                };
 
 
             if ($request->image != "") {
@@ -100,7 +110,7 @@ class pageController extends Controller
                 
             }
 
-        return redirect('/admin/page');
+        return back();
     }
 
     public function destroy(int $id)
