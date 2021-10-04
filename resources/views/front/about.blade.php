@@ -5,16 +5,15 @@
 
 @include('layouts.sidenav')
 
-<h3 class="about-title">{{$about->title}}</h3>
+<h3 class="about-title">{{$content->title}}</h3>
 
 <div class="about-content">
-    {{$about->content}}
+    {{$content->content}}
 </div>
-@if($about->image)
+@if($content->image)
 <div class="about-image">
-    <img src="{{asset('public/storage/images/' . $about->image)}}">
+    <img src="{{asset('public/storage/images/' . $content->image)}}">
 </div>
-
 @endif
 
 @include('layouts.footer')

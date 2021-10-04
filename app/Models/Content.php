@@ -15,9 +15,4 @@ class Content extends Model
         'image'
     ];
 
-    public function children()
-    {
-        $this->hasOne(Page::class);
-    }
-
 }

@@ -5,33 +5,34 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Content;
+use App\Models\Term;
 
 class PageController extends Controller
 {
     public function Home()
     {
-        $home = Content::where('page_id', 1);
+        $content = Content::where('page_id', 1)->first();
 
         return view('front.home', [
-            'home' => $home,
+            'content' => $content,
         ]);
     }
 
     public function about()
     {
-        $about = Content::where('page_id', 2);
+        $content = Content::where('page_id', 2)->first();
 
         return view('front.about', [
-            'about' => $about,
+            'content' => $content,
         ]);
     }
 
     public function terms()
     {
-        $terms = Content::where('page_id', '3');
+        $content = Term::first();
 
-        return view('front.terms', [
-            'terms' => $terms,
+        return view('front.about', [
+            'content' => $content,
         ]);
     }
 
