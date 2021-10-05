@@ -12,8 +12,5 @@
             <li class="side-nav__items-list">
                 <a href="{{route('gallery')}}">Gallery</a>
             </li>
-            <li class="side-nav__items-list">
-                <a href="{{route('content')}}">content</a>
-            </li>
         </ul>
     </div>

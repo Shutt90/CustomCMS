@@ -18,16 +18,15 @@ class contentController extends Controller
 
     public function create()
     {
-
-        return view('admin.contents.create');
+        return view('admin.contents.create', [
+            'contents' => Content::make()
+        ]);
 
     }
 
     public function edit(int $id)
     {
-
         $contents = Content::findOrFail($id);
-
         return view('admin.contents.edit', compact('contents'));
 
     }

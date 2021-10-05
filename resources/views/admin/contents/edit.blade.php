@@ -1,3 +1,5 @@
+@extends('layouts.header')
+@section('title', '{{$contents->tab_title}}')
 @include('admin.layouts.adminside')
 
 <div class="create-contents">
@@ -17,5 +19,3 @@
 
 
 </div>
-
-@include('admin.layouts.errors')
