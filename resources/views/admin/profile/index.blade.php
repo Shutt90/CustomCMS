@@ -1,5 +1,8 @@
-@include('admin.layouts.adminside')
+@extends('admin.layouts.adminside')
 
+@section('title', 'Admin - Profile')
+
+@section('content')
 <div class="profile">
     <h3 class="profile-title text-center">
         Profile
@@ -41,3 +44,5 @@
         @include('admin.layouts.success')
 
     </div>
+
+@endsection

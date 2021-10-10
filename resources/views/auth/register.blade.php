@@ -1,6 +1,7 @@
-@include('layouts.header')
-@section('title', 'Register')
+@extends('layouts.header')
+@section('title', 'CMS - Register')
 
+@section('content')
 <section class="content">
 
     <div class="register">
@@ -44,3 +45,5 @@
 </section>
 
 @include('layouts.footer')
+
+@endsection

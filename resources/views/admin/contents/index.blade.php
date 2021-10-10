@@ -1,7 +1,8 @@
-@extends('layouts.header')
+@extends('admin.layouts.adminside')
 
-@include('admin.layouts.adminside')
+@section('title', 'Admin - Contents')
 
+@section('content')
 <div class="admin-contents">
     <h3 class="admin-contents__title">
         Contents
@@ -31,9 +32,8 @@
             <p class="">{{$content->image}}</p>
             @endif
         </div>
-        @endforeach
-            
+        @include('admin.layouts.errors')
+        @endforeach  
     </div>
-
-
 </div>
+@endsection

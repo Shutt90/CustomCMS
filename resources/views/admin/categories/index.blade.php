@@ -1,7 +1,8 @@
-@extends('layouts.header')
+@extends('admin.layouts.adminside')
 
-@include('admin.layouts.adminside')
+@section('title', 'Admin - Categories')
 
+@section('content')
 <div class="admin-category">
     <h3 class="admin-category__title">
         Category
@@ -22,9 +23,7 @@
                 <h3 class="admin-category__container-section__title">{{$item->title}}</h3>
             </div>
         </div>
-        @endforeach
-            
+        @endforeach  
     </div>
-
-
 </div>
+@endsection

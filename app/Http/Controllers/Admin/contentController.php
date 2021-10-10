@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContentRequest;
 
 class contentController extends Controller
 {
@@ -31,19 +32,8 @@ class contentController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(ContentRequest $request)
     {
-
-        $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required',
-            'image' => 'max:255',
-            'file_path' => 'image|mimes:jpg,png,jpeg',
-            'tab_title' => 'required|max:30',
-            'meta_title' => 'required|max:30',
-            'meta_description' => 'required',
-            'meta_keywords' => 'required',
-        ]);
 
         $fileModel = new Content;
 
@@ -63,7 +53,7 @@ class contentController extends Controller
         }
 
         return back()
-        ->with('Success', 'Content has successfully been uploaded');
+        ->with('success', 'Content has successfully been uploaded');
         
     }
 

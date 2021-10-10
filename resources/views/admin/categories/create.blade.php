@@ -1,6 +1,8 @@
-@extends('layouts.header')
-@include('admin.layouts.adminside')
+@extends('admin.layouts.adminside')
 
+@section('title', 'Admin - Create Category')
+
+@section('content')
 <div class="create-category">   
     <div class="create-category__container">
         @include("admin.layouts.errors")
@@ -9,6 +11,5 @@
         @include('admin.category.layouts.form')
     {{ Form::close()}}
     </div>
-
-
 </div>
+@endsection

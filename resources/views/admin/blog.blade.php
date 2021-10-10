@@ -1,7 +1,6 @@
-@extends('layouts.header')
-@section('title', 'Blog')
+@extends('admin.layouts.adminside')
 
-@include('admin.layouts.adminside')
+@section('title', 'Blog')
 
 @section('content')
 
@@ -19,5 +18,4 @@
 
 @include('admin.layouts.errors')
 
-
-@stop
+@endsection

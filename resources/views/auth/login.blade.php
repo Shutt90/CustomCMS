@@ -1,5 +1,9 @@
 @include('layouts.header')
 
+@section('title', 'CMS - Login')
+
+@section('content')
+
 <section class="content">
 
         @guest
@@ -30,3 +34,5 @@
 
 </section>
 @include('layouts.footer')
+
+@endsection

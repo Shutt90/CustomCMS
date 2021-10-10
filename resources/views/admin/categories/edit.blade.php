@@ -1,5 +1,8 @@
 @include('admin.layouts.adminside')
 
+@section('title', 'Admin - Edit Category')
+
+@section('content')
 <div class="create-category">
     <h3 class="create-category__title">
         Categories
@@ -11,6 +14,5 @@
         @include('admin.categories.layouts.form')
         {{ Form::close()}}
     </div>
-
-
 </div>
+@endsection
