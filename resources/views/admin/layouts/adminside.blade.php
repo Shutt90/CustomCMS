@@ -15,7 +15,12 @@
 <i class="fas fa-chevron-down ad-nav-menu"></i>
 
 <nav class="ad-nav">
-    <ul class="ad-nav-list">
+    <div class="ad-nav-list">
+        <li class="ad-nav-list__item">
+            <a class="ad-nav-list__item-link" href="{{route('profile')}}">
+                {{Auth::user()->fname}} {{Auth::user()->surname}}
+            </a>
+        </li>  
         <li class="ad-nav-list__item">
             <a class="ad-nav-list__item-link" class="ad-nav-list__item-link" href="{{route('dashboard')}}">
                 Dashboard
@@ -40,8 +45,13 @@
             <a class="ad-nav-list__item-link" href="{{route('terms')}}">
                 Terms & Conditions
             </a>
-        </li>  
-    </ul>
+        </li>
+        <li class="ad-nav-list__item">
+            <a class="ad-nav-list__item-link" href="{{route('logout')}}">
+                Logout
+            </a>
+        </li>    
+    </div>
 </nav>
 
 @yield('content')

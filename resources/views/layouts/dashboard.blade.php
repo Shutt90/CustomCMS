@@ -1,14 +1,13 @@
-@extends('layouts.header')
-@section('title', 'Dashboard')
+@extends('admin.layouts.adminside')
 
-@include('admin.layouts.adminside')
+@section('title', 'Dashboard')
 
 @section('content')
 
 <body>
     <script src="{{url('')}}/js/app.js" type="module" defer></script>
 
-    <h1 class="dashboard-title">Welcome back</h1>
+    <h1 class="dashboard-title">Welcome Back {{Auth::user()->fname}}</h1>
 
     <div class="dashboard-content">
 

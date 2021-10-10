@@ -10279,20 +10279,20 @@ body {
   font-size: 2rem;
   top: 15px;
   right: 15px;
-  z-index: 101;
+  z-index: 1001;
 }
 
 .fa-bars {
-  display: block;
   position: fixed;
   font-size: 2rem;
   top: 15px;
   right: 15px;
-  z-index: 101;
+  z-index: 1001;
 }
 
 .ad-nav {
-  width: 250px;
+  height: 100%;
+  left: -300px;
   position: fixed;
   z-index: 101;
 }
@@ -10300,22 +10300,19 @@ body {
   display: flex;
   position: absolute;
   flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  width: 200px;
-  left: -300px;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+  height: 100%;
   background-color: #9dddc8;
-  border-right: #98c5e1 0.5rem solid;
   border-bottom: #98c5e1 0.5rem solid;
+  box-shadow: 5px 0px #888888;
 }
 .ad-nav-list__item {
-  height: 5rem;
-  width: 200px;
-  font-size: 2rem;
+  padding: 1rem;
+  font-size: 1.5rem;
   list-style: none;
   background-color: #b9eec5;
   margin: 1rem;
-  border: #9dddc8 solid 2px;
 }
 .ad-nav-list__item-link {
   color: black;
