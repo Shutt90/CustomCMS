@@ -1,4 +1,4 @@
-@include('layouts.header')
+@extends('layouts.header')
 
 @section('title', 'CMS - Login')
 

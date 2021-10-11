@@ -33,6 +33,7 @@
             @endif
         </div>
         @include('admin.layouts.errors')
+        @include('admin.layouts.success')
         @endforeach  
     </div>
 </div>

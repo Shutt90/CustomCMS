@@ -52,27 +52,14 @@ class contentController extends Controller
             $fileModel->save();
         }
 
-        return back()
+        return redirect()->route('content.index')
         ->with('success', 'Content has successfully been uploaded')
         ->with('error', 'Unsuccessful');
         
     }
 
-    public function update(Request $request, int $id)
+    public function update(ContentRequest $request, int $id)
     {
-
-        $validated = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required',
-            'image' => 'max:255',
-            'file_path' => 'image|mimes:jpg,png,jpeg',
-            'tab_title' => 'required|max:30',
-            'meta_title' => 'required|max:30',
-            'meta_description' => 'required',
-            'meta_keywords' => 'required',
-        ]);
-
-        if($validated) {
             $content = Content::findOrFail($id);
             $content->update([
                 'title' => $request->title,
@@ -100,8 +87,10 @@ class contentController extends Controller
                 $content->update(['file_path' => $imagename]);
             };
 
-            return back();
-        };
+        return redirect()->route('content.index')
+        ->with('success', 'Content has successfully been uploaded')
+        ->with('error', 'Unsuccessful');
+
     }
 
     public function destroy(int $id)
