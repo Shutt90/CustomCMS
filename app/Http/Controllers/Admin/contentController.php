@@ -53,7 +53,8 @@ class contentController extends Controller
         }
 
         return back()
-        ->with('success', 'Content has successfully been uploaded');
+        ->with('success', 'Content has successfully been uploaded')
+        ->with('error', 'Unsuccessful');
         
     }
 
