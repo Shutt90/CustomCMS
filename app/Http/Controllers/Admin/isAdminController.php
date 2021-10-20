@@ -14,4 +14,18 @@ class isAdminController extends Controller
             'users' => User::orderBy('id', 'asc')->get()
         ]);
     }
+
+    public function update(Request $request, int $id)
+    {
+        
+        $userAdmin = User::findOrFail($id);
+
+        $userAdmin->update([
+            'admin' => $request->admin,
+        ]);
+
+        return back()->with('success', 'User updated');
+        
+        
+    }
 }

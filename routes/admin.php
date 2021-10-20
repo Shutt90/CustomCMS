@@ -30,6 +30,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
     Route::get('/terms/{edit}', [termsController::class, 'edit'])->name('terms.edit');
     Route::put('/terms/update/{id}', [termsController::class, 'update'])->name('terms.update');
     Route::get('/users', [isAdminController::class, 'index'])->name('users.index');
+    Route::put('/users/{id}', [isAdminController::class, 'update'])->name('users.update');
 
     
 
