@@ -40,4 +40,5 @@ Route::group(['middleware' => 'web'], function() {
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
     Route::get('/terms', [PageController::class, 'terms'])->name('terms');
+
 });

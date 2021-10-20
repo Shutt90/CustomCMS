@@ -27,6 +27,11 @@
             </a>
         </li>
         <li class="ad-nav-list__item">
+            <a class="ad-nav-list__item-link" href="{{route('users.index')}}">
+                Users
+            </a>
+        </li>
+        <li class="ad-nav-list__item">
             <a class="ad-nav-list__item-link" href="{{route('content.index')}}">
                 Content
             </a>

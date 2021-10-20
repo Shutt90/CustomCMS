@@ -10,7 +10,8 @@ use App\Http\Controllers\Admin\pageController;
 use App\Http\Controllers\Admin\termsController;
 use App\Http\Controllers\Admin\profileController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Admin\categoryController;      
+use App\Http\Controllers\Admin\categoryController;    
+use App\Http\Controllers\Admin\isAdminController;  
 
 //Admin controllers
 Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
@@ -28,6 +29,9 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
     Route::get('/terms', [termsController::class, 'index'])->name('terms');
     Route::get('/terms/{edit}', [termsController::class, 'edit'])->name('terms.edit');
     Route::put('/terms/update/{id}', [termsController::class, 'update'])->name('terms.update');
+    Route::get('/users', [isAdminController::class, 'index'])->name('users.index');
+
+    
 
 });
 
