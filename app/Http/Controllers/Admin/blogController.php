@@ -52,7 +52,6 @@ class blogController extends Controller
             'post' => $request->post,
         ]);
 
-
     }
 
     /**

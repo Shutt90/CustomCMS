@@ -32,8 +32,6 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
     Route::get('/users', [isAdminController::class, 'index'])->name('users.index');
     Route::put('/users/{id}', [isAdminController::class, 'update'])->name('users.update');
 
-    
-
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
