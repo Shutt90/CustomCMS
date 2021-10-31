@@ -1,18 +1,19 @@
-.fa-chevron-down {
-    display: none;
+.hamburger {
     position: fixed;
     font-size: 2rem;
     top: 15px;
     right: 15px;
     z-index: 1001;
+    height: 40px;
+    width: 40px;
 }
 
-.fa-bars {
-    position: fixed;
-    font-size: 2rem;
-    top: 15px;
-    right: 15px;
-    z-index: 1001;
+#stripe {
+    display: none;
+}
+
+#cross   {
+    display: none;
 }
 
 .ad-nav {

@@ -13,6 +13,7 @@
         "axios": "^0.21",
         "bootstrap": "^4.6.0",
         "jquery": "^3.6",
+        "kute.js": "^2.1.2",
         "laravel-mix": "^6.0.28",
         "lodash": "^4.17.19",
         "popper.js": "^1.16.1",
@@ -25,7 +26,6 @@
         "@popperjs/core": "^2.9.3",
         "bootstrap": "^5.1.0",
         "chart.js": "^3.5.1",
-        "gsap": "file:gsap-bonus.tgz",
         "scss": "^0.2.4"
     }
 }

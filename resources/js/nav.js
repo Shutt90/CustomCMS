@@ -1,18 +1,26 @@
-import {gsap} from "gsap";
+import KUTE from 'kute.js'
 
+const bars = document.querySelector('.hamburger');
+const nav = document.getElementById('adminnav');
+const lines  = document.getElementById("lines");
+const cross  = document.getElementById("cross");
 
-const bars = document.querySelector('.fa-bars');
-const chevDown = document.querySelector('.fa-chevron-down');
-const nav = document.querySelector('.ad-nav');
+var tween = KUTE.to(nav,{translateX:300});
+var morph = KUTE.to(lines, {path: cross });
+
+var tween2 = KUTE.to(nav,{translateX:-300});
+var morph2 = KUTE.to(lines, {path: lines });
 
 bars.addEventListener('click', function() {
-    bars.style.display = "none";
-    chevDown.style.display = "block";
-    gsap.to(".ad-nav", {x: 300, duration: 2, ease: "power4"});
-})
+    console.log("helloworld");
 
-chevDown.addEventListener('click', function() {
-    chevDown.style.display = "none";
-    bars.style.display = "block";
-    gsap.to(".ad-nav", {x: -300, duration: 2, ease: "power1"});
+    if(nav.classList.contains("opened")) {
+        nav.classList.remove('opened');
+        tween2.start();
+        morph2.start();
+    }else {
+        nav.classList.add("opened");
+        tween.start();
+        morph.start();
+    }  
 })
