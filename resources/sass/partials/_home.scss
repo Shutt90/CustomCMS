@@ -18,13 +18,24 @@
         }    
     }
 
+    &-content {
+        display: flex;
+        margin: 2rem;
+    }
+
     &-about {
+        display: flex;
         float: right;
         text-align: left;
 
         &__img {
             width: 50%;
             height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }

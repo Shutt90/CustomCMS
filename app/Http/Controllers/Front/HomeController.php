@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $contents = Content::where('page_id', '1')->first();
+        $contents = Content::where('page_id', '1')->orderBy('id', 'asc')->first();
 
         return view('front.index', [
             'contents' => $contents, 

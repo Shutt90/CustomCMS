@@ -21,6 +21,8 @@
             </form>
             <div class="admin-contents__container-section-text">
                 <h3 class="admin-contents__container-section__title">{{$content->title}}</h3>
+                <h5 class="admin-contents__container-section__pagenum">Page Number {{$content->page_id}}</h5>
+
                 {{$content->content}}
 
                 <p class="admin-contents__container-section-text__page">

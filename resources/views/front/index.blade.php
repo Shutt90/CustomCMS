@@ -10,20 +10,15 @@
             <h3 class="main-title__txt">{{$contents->title}}</h3>
             <div class="main-title__underline"></div>
         </div>
-
-        @if($contents->image)
-
-        <img src="{{asset('storage/images/' . $contents->image)}}">
-
-        @else
-
-        <img src="{{asset('/stoage/images/' . $profile->image)}}">
-
-        @endif
-
-        <div class="main-about mt-3">
+        <div class="main-content">
+            <div class="main-about mt-3">
                 {{$contents->content}}
-            <img class="main-about__img" src="{{$contents->file_path}}">
+                @if ($contents->file_path)
+                <div class="main-about__img">
+                    <img src="{{asset('storage/images/' . $contents->file_path)}}">
+                </div>
+                @endif
+            </div>
         </div>
 
     </div>
