@@ -26,16 +26,43 @@ class profileController extends Controller
         $request->validate([
             'email' => 'unique:users|email',
             'password' => 'required|min:8|confirmed',
+            'picture' => 'mimes:jpg,png.jpeg',
         ]);
 
         $user = Auth::user();
-        $user->update([
-            'username' => $request->username,
-            'fname' => $request->fname,
-            'surname' => $request->surname,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+
+        if($request->picture) {
+            $path = storage_path('app/public/images/'); 
+    
+    
+            if ($user->picture != '' && $user->picture != null) {
+                $fileOld = $path . $user->image;
+                unlink($fileOld);
+            }
+
+            $picture = $request->picture;
+            $picturename = time() . '_' . $request->file_path->getClientOriginalName();
+            $picture->move($path, $picturename);
+
+            $user->update([
+                'username' => $request->username,
+                'fname' => $request->fname,
+                'surname' => $request->surname,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'picture' => $picturename,
+            ]);
+
+        } else {
+            $user->update([
+                'username' => $request->username,
+                'fname' => $request->fname,
+                'surname' => $request->surname,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+        };
+
 
         Cache::flush();
         return back()->with('Profile Updated', 'success');

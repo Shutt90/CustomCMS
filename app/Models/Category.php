@@ -16,6 +16,6 @@ class Category extends Model
 
     public function fileRel()
     {
-        return $this->belongsTo(File::class);
+        return $this->hasOne(File::class);
     }
 }

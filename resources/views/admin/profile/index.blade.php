@@ -8,7 +8,7 @@
         Profile
     </h3>
     <div class="profile-container">
-        {{ Form::open(array('route' => array('profile.update', $user->id), 'method' => 'PUT')) }}
+        {{ Form::open(array('route' => array('profile.update', $user->id), 'method' => 'PUT', 'files' => true)) }}
         @csrf
         @method('PUT')
 
@@ -35,6 +35,10 @@
         <div class="form-group contents-center">
         {!! Form::label('password_confirmation', 'Password Confirmation:') !!}
         {!! Form::password('password_confirmation', null, ['class' => '']) !!}
+        </div>
+        <div class="form-group contents-center">
+        {!! Form::label('picture', 'Picture:') !!}
+        {!! Form::file('picture', null, ['class' => '']) !!}
         </div>
         <div class="form-group contents-center">
         {!! Form::submit("Submit", ['class' => 'btn btn-primary form-control']) !!}

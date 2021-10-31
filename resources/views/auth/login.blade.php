@@ -23,12 +23,6 @@
 
         @endguest
 
-        @auth
-
-        @back()
-
-        @endauth
-
         @include('admin.layouts.errors')
         @include('admin.layouts.success')
 

@@ -61,19 +61,10 @@ class contentController extends Controller
     public function update(ContentRequest $request, int $id)
     {
             $content = Content::findOrFail($id);
-            $content->update([
-                'title' => $request->title,
-                'content' => $request->content,
-                'tab_title' => $request->tab_title,
-                'meta_title' => $request->meta_title,
-                'meta_description' => $request->meta_description,
-                'meta_keywords' => $request->meta_keywords,
-            ]);
 
-            if ($request->image != "") {
+            if ($request->file_path != "") {
                 $path = storage_path('app/public/images/'); 
-    
-    
+                
                 if ($content->image != '' && $content->image != null) {
                     $fileOld = $path . $content->image;
                     unlink($fileOld);
@@ -84,13 +75,29 @@ class contentController extends Controller
                 $image->move($path, $imagename);
     
     
-                $content->update(['file_path' => $imagename]);
-            };
+                $content->update([
+                    'title' => $request->title,
+                    'content' => $request->content,
+                    'tab_title' => $request->tab_title,
+                    'meta_title' => $request->meta_title,
+                    'meta_description' => $request->meta_description,
+                    'meta_keywords' => $request->meta_keywords,
+                    'file_path' => $imagename
+                ]);
+                
+            } else {
+                $content->update([
+                    'title' => $request->title,
+                    'content' => $request->content,
+                    'tab_title' => $request->tab_title,
+                    'meta_title' => $request->meta_title,
+                    'meta_description' => $request->meta_description,
+                    'meta_keywords' => $request->meta_keywords,
+                ]);
+            }
 
         return redirect()->route('content.index')
-        ->with('success', 'Content has successfully been uploaded')
-        ->with('error', 'Unsuccessful');
-
+        ->with('success', 'Content has successfully been uploaded');
     }
 
     public function destroy(int $id)

@@ -17,6 +17,6 @@ class File extends Model
 
     public function categoryRel()
     {
-        return $this->hasOne(Category::class, 'id', 'category_id');
+        return $this->belongsTo(Category::class, 'id', 'category_id');
     }
 }
