@@ -17,7 +17,9 @@ class postController extends Controller
      */
     public function index()
     {
-        //
+        return view('front.blog', [
+            'posts' => Post::orderBy('id', 'desc')->with('user')->get(),
+        ]);
     }
 
     /**

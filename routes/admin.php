@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\contentController;
 use App\Http\Controllers\Admin\dashboardController;
 use App\Http\Controllers\Admin\fileUploadController;
-use App\Http\Controllers\Admin\blogController;
 use App\Http\Controllers\Admin\pageController;
 use App\Http\Controllers\Admin\termsController;
 use App\Http\Controllers\Admin\profileController;
@@ -19,7 +18,6 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
     
     Route::resources([
         '/content' => contentController::class,
-        '/blog' => blogController::class,
         '/gallery' => fileUploadController::class,
         '/page' => pageController::class,
         '/categories' => categoryController::class,
@@ -38,7 +36,6 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     
     Route::resources([
-        '/blog' => blogController::class,
         '/post' => postController::class,
     ]);
     
