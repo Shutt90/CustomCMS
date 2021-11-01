@@ -1,10 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class PostController extends Controller
+class postController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        return view('admin.post.create');
     }
 
     /**
@@ -32,9 +36,21 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+
+        $post = new Post;
+
+        $post = Post::make([
+            'title' => $request->title,
+            'content' => $request->content,
+            'user_id' => Auth::user()->id,
+        ]);
+
+        $post->save();
+
+        return redirect()->route('post.show', [$post->id]);
+
     }
 
     /**
@@ -45,7 +61,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

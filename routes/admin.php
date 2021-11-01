@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\profileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\categoryController;    
 use App\Http\Controllers\Admin\isAdminController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\postController;
 
 //Admin controllers
 Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     
     Route::resources([
         '/blog' => blogController::class,
-        '/posts' => PostController::class,
+        '/post' => postController::class,
     ]);
     
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
