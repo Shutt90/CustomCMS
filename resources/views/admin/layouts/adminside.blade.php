@@ -43,7 +43,7 @@
                 </a>
             </li>
             <li class="ad-nav-list__item">
-                <a class="ad-nav-list__item-link" href="{{route('blog.index')}}">
+                <a class="ad-nav-list__item-link" href="{{route('post.index')}}">
                     Blog
                 </a>
             </li>

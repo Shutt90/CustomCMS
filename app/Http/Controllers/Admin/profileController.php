@@ -68,5 +68,12 @@ class profileController extends Controller
         return back()->with('Profile Updated', 'success');
 
     }
+
+    public function show($username)
+    {
+        return view('admin.post.user', [
+            'user' => User::with('posts')->orderBy('id', 'desc')->paginate(5)->all(),
+        ]);
+    }
     
 }
