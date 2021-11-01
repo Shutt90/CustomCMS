@@ -1,0 +1,29 @@
+.post {
+
+    &-container {
+        margin: auto;
+        border: 1px black solid;;
+        border-radius: 2rem;
+        padding: 1rem;
+        max-height: 80%;
+        max-width: 80%;
+        position: relative;
+        box-shadow: 2.5px 5px black;
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__content {
+            font-size: 1.5rem;
+
+            &-author {
+                text-align: right;
+                font-size: 1.5rem;
+                font-weight: bold;
+
+            }
+
+        }
+    } 
+}

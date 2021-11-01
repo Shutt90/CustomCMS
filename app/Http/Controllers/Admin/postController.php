@@ -59,8 +59,12 @@ class postController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $id)
     {
+
+        return view('front.posts', [
+            'post' => Post::findOrFail($id)->with('user')->first(),
+        ]);
         
     }
 

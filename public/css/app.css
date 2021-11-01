@@ -10297,6 +10297,28 @@ body {
   font-size: 2rem;
 }
 
+.post-container {
+  margin: auto;
+  border: 1px black solid;
+  border-radius: 2rem;
+  padding: 1rem;
+  max-height: 80%;
+  max-width: 80%;
+  position: relative;
+  box-shadow: 2.5px 5px black;
+}
+.post-container__title {
+  font-size: 3rem;
+}
+.post-container__content {
+  font-size: 1.5rem;
+}
+.post-container__content-author {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .hamburger {
   position: fixed;
   font-size: 2rem;
