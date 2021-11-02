@@ -14,7 +14,7 @@
         <div class="post-container__content">
             {{$post->content}}
             <div class="post-container__content-author">
-                <a href="{{route('user.posts', [$post->user->username])}}">
+                <a href="{{route('user.posts', $post->user)}}">
                     {{$post->user->username}}
                 </a>
             </div>

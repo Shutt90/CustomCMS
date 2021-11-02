@@ -69,10 +69,10 @@ class profileController extends Controller
 
     }
 
-    public function show($username)
+    public function show(User $user)
     {
         return view('admin.post.user', [
-            'user' => User::with('posts')->orderBy('id', 'desc')->paginate(5)->all(),
+            'posts' => $user->posts()->with('user')->orderBy('id')->paginate(5),
         ]);
     }
     

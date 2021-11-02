@@ -1,5 +1,9 @@
 <div class="user-container">
-    @foreach($user->posts()->title as $post)
-    {{$post->title}}
+    @foreach($posts as $post)
+    <h3 class="user-posts__title">{{$post->title}}</h3>
+    <p class="user-posts__content">
+    {{$post->content}}
+    </p>
+    
     @endforeach
 </div>
