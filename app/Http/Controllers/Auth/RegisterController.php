@@ -25,22 +25,29 @@ class RegisterController extends Controller
         $this->validate($request, [
             'fname' => 'required|max:255',
             'surname' => 'required|max:255',
-            'username' => 'required|max:25|regex:^[^.]*$',
+            'username' => 'required|max:25|regex:/[a-zA-Z\d]/',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|confirmed',
         ]);
 
-        User::create([
+        $user = User::make([
             'fname' => $request->fname,
             'surname' => $request->surname,
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'admin' => '0',
         ]);
+
+        $user->save();
+
+        if(!$user->save()){
+            return back()->withInput($request->input);
+        }
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('dashboard')->with('success', 'You have been registered');
+        return redirect()->route('blog')->with('success', 'You have been registered');
 
         
     }

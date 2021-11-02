@@ -29,9 +29,12 @@
         @endguest
 
         @auth
+        
+        @if(Auth::user()->admin)
             <a href="{{route('dashboard')}}">
                 <li class="nav-item">Dashboard</li>
             </a>
+        @endif
             <a href="{{route('profile')}}">
                 <li class="nav-item">{{Auth::user()->fname}} {{Auth::user()->surname}}</li>
             </a>
