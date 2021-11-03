@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-
+use App\Models\Post;
 
 class dashboardController extends Controller
 {
     public function index()
     {
 
-        return view('layouts.dashboard');
+        $posts = Post::orderBy('id', 'desc')->with('user')->get();
+
+        return view('layouts.dashboard', [
+            'posts' => $posts,
+        ]);
     }
 
 }

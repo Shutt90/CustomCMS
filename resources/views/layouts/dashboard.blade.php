@@ -3,11 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-
-<body>
     <script src="{{url('')}}/js/app.js" type="module" defer></script>
-
-    <h1 class="dashboard-title">Welcome Back {{Auth::user()->fname}}</h1>
 
     <div class="dashboard">
         <div class="dashboard-info">
@@ -38,6 +34,20 @@
             <div class="dashboard-graph-sec">
                 <canvas class="current-visitors"></canvas>
             </div>
+            <div class="dashboard-graph-sec">
+                ICONS SHOULD PROBABLY GO HERE TO DO THINGS OR MAYBE NAV
+            </div>
+        </div>
+
+        <div class="dashboard-admin">
+            <div class="dashboard-admin-sec">
+                @foreach($posts as $post)
+                <p class="dashboard-admin-sec__text">
+                    <span class="title">{{$post->title}}</span>
+                    <span class="content">{{substr($post->content, 0, 20) }}</span>
+                </p>
+                @endforeach
+            </div>
         </div>
 
     </div>
@@ -46,4 +56,4 @@
 
 @include('layouts.footer')
 
-@stop
+@endsection
