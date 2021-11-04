@@ -42,10 +42,16 @@
         <div class="dashboard-admin">
             <div class="dashboard-admin-sec">
                 @foreach($posts as $post)
-                <p class="dashboard-admin-sec__text">
-                    <span class="title">{{$post->title}}</span>
-                    <span class="content">{{substr($post->content, 0, 20) }}</span>
-                </p>
+                    <p class="dashboard-admin-sec__text">
+                        <span class="title">{{$post->title}}</span>
+                        <span class="content">{{substr($post->content, 0, 40) }}...</span>
+                        <a href="{{route('user.posts', [$post->user->username])}}">
+                            <span class="author">Written by {{$post->user->username}}</span>
+                        </a>
+                        <a href="{{route('post.show', [$post->id])}}">
+                            Read more...
+                        </a>
+                    </p>
                 @endforeach
             </div>
         </div>

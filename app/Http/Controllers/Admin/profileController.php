@@ -72,7 +72,7 @@ class profileController extends Controller
     public function show(User $user)
     {
         return view('admin.post.user', [
-            'posts' => $user->posts()->with('user')->orderBy('id')->paginate(5),
+            'posts' => $user->posts()->orderBy('id')->paginate(5),
         ]);
     }
     

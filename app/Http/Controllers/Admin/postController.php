@@ -65,7 +65,7 @@ class postController extends Controller
     {
 
         return view('front.posts', [
-            'post' => Post::findOrFail($id)->with('user')->first(),
+            'post' => Post::findOrFail($id),
         ]);
         
     }
