@@ -12,9 +12,11 @@
 </div>
 <div class="form-group contents-center">
 {!!Form::label('meta', 'Activate Meta Data')!!}
-Yes{!!Form::radio('meta', '1', $contents   ->meta == 1 ? true : false)!!}
+Yes{!!Form::radio('meta', '1', $contents->meta == 1 ? true : false)!!}
 No{!!Form::radio('meta', '0', $contents->meta == 0 ? true : false)!!}
 </div>
+
+@if($contents->meta == 1)
 <div class="form-group contents-center">
 {!! Form::label('meta_title', 'Meta Title:') !!}
 {!! Form::text('meta_title', $contents->meta_title, ['class' => '']) !!}
@@ -27,6 +29,7 @@ No{!!Form::radio('meta', '0', $contents->meta == 0 ? true : false)!!}
 {!! Form::label('meta_keywords', 'Meta Keywords:') !!}
 {!! Form::text('meta_keywords', $contents->meta_keywords, ['class' => '']) !!}
 </div>
+@endif
 <div class="form-group contents-center">
 {!! Form::label('file_path', 'Image Upload:') !!}
 {!! Form::file('file_path'); !!}

@@ -90,21 +90,12 @@ class contentController extends Controller
                     'title' => $request->title,
                     'content' => $request->content,
                     'tab_title' => $request->tab_title,
+                    'meta' => $request->meta,
                     'meta_title' => $request->meta_title,
                     'meta_description' => $request->meta_description,
                     'meta_keywords' => $request->meta_keywords,
                 ]);
-            }
-
-            if($request->meta){
-
-                $content->update([
-                    'meta' => $request->meta
-                ]);
-
-                return back()->with('success', 'Meta tags now available');
-
-            }
+            };
 
         return redirect()->route('content.index')
         ->with('success', 'Content has successfully been uploaded');
