@@ -1,9 +1,17 @@
-@extends('layouts.header')
-@section('title', 'Home Page')
-
+@extends('app')
+@if($content->meta_title)
+    @section('meta_title', $content->meta_title)
+@endif
+@if($content->meta_description)
+    @section('description', $content->meta_description)
+@endif
+@if($content->meta_keywords)
+    @section('meta_title', $content->meta_keywords)
+@endif
+@if($content->tab_title)
+    @section('title', $content->tab_title)
+@endif
 @section('content')
-
-@include('layouts.sidenav')
 
     <div class="home-gallery">
         <h3 class="home-gallery-title">Gallery</h3>
@@ -29,4 +37,4 @@
         </div>
     </div>
 
-@stop
+@endsection
