@@ -22,12 +22,10 @@
             <div class="admin-contents__container-section-text">
                 <h3 class="admin-contents__container-section__title">{{$content->title}}</h3>
                 <h5 class="admin-contents__container-section__pagenum">Page Number {{$content->page_id}}</h5>
+                <p class="admin-content__container-section__meta">Meta Data</p>
 
                 {{$content->content}}
-
-                <p class="admin-contents__container-section-text__page">
-                    {{$content->page_name}}
-                </p>
+                
             </div>
             @if($content->file_path != "")
             <img src="{{asset('storage/images/' . $content->file_path)}}">

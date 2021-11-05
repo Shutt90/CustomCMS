@@ -15,6 +15,7 @@ class Content extends Model
         'image',
         'file_path',
         'tab_title',
+        'meta',
         'meta_title',
         'meta_description',
         'meta_keywords'

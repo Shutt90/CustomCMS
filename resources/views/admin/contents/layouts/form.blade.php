@@ -11,6 +11,11 @@
 {!! Form::text('tab_title', $contents->tab_title, ['class' => '']) !!}
 </div>
 <div class="form-group contents-center">
+{!!Form::label('meta', 'Activate Meta Data')!!}
+Yes{!!Form::radio('meta', '1', $contents   ->meta == 1 ? true : false)!!}
+No{!!Form::radio('meta', '0', $contents->meta == 0 ? true : false)!!}
+</div>
+<div class="form-group contents-center">
 {!! Form::label('meta_title', 'Meta Title:') !!}
 {!! Form::text('meta_title', $contents->meta_title, ['class' => '']) !!}
 </div>

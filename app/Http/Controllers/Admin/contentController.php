@@ -96,6 +96,16 @@ class contentController extends Controller
                 ]);
             }
 
+            if($request->meta){
+
+                $content->update([
+                    'meta' => $request->meta
+                ]);
+
+                return back()->with('success', 'Meta tags now available');
+
+            }
+
         return redirect()->route('content.index')
         ->with('success', 'Content has successfully been uploaded');
     }

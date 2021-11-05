@@ -25,6 +25,7 @@ class ContentFactory extends Factory
             'title' => $this->faker->sentence(1),
             'content' => $this->faker->paragraph(5),
             'tab_title' => $this->faker->sentence(1),
+            'meta' => rand(0, 1),
             'meta_title' => $this->faker->sentence(1),
             'meta_description' => $this->faker->sentence(10),
             'meta_keywords' => $this->faker->sentence(5),
