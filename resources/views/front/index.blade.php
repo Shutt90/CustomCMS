@@ -18,13 +18,13 @@
 
     <div class="main">
         <div class="main-title">
-            <h3 class="main-title__txt">{{$contents->title}}</h3>
+            <h3 class="main-title__txt">{{$content->title}}</h3>
             <div class="main-title__underline"></div>
         </div>
         <div class="main-content">
             <div class="main-about mt-3">
-                {{$contents->content}}
-                @if ($contents->file_path)
+                {{$content->content}}
+                @if ($content->file_path)
                 <div class="main-about__img">
                     <img src="{{asset('storage/images/' . $contents->file_path)}}">
                 </div>

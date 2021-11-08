@@ -10,7 +10,7 @@ class dashboardController extends Controller
     public function index()
     {
 
-        $posts = Post::orderBy('id', 'desc')->with('user')->limit(10)->get();
+        $posts = Post::orderBy('id', 'desc')->with('user')->limit(5)->get();
         
 
         return view('layouts.dashboard', [

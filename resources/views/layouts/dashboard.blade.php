@@ -60,6 +60,4 @@
 
 </body> 
 
-@include('layouts.footer')
-
 @endsection

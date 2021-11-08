@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('app')
 
 @section('title', 'CMS - Login')
 
@@ -27,6 +27,5 @@
         @include('admin.layouts.success')
 
 </section>
-@include('layouts.footer')
 
 @endsection
