@@ -35,7 +35,26 @@
                 <canvas class="current-visitors"></canvas>
             </div>
             <div class="dashboard-graph-sec">
-                ICONS SHOULD PROBABLY GO HERE TO DO THINGS OR MAYBE NAV
+                <div class="nav-inner">
+                    <a class="nav-inner-item" href="{{route('dashboard')}}">
+                        <i class="fas fa-house-user"></i>
+                    </a>
+                    <a class="nav-inner-item" href="{{route('dashboard')}}">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a class="nav-inner-item" href="{{route('users.index')}}">
+                        <i class="fas fa-users"></i>
+                    </a>
+                    <a class="nav-inner-item" href="{{route('content.index')}}">
+                        <i class="fas fa-pen"></i>
+                    </a>
+                    <a class="nav-inner-item" href="{{route('gallery.index')}}">
+                        <i class="fas fa-images"></i>
+                    </a>
+                    <a class="nav-inner-item" href="{{route('logout')}}">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
             </div>
         </div>
 

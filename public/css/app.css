@@ -10242,6 +10242,22 @@ body {
   margin: 1rem;
   background-color: #f2f2f2;
 }
+.dashboard-graph-sec .nav-inner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+.dashboard-graph-sec .nav-inner-item {
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  background-color: #98c5e1;
+  padding: 1rem;
+}
+.dashboard-graph-sec .nav-inner-item:hover {
+  color: #3aa783;
+}
 .dashboard-graph canvas {
   -o-object-fit: contain;
      object-fit: contain;
