@@ -1,18 +1,4 @@
 @extends('app')
-@if($content->meta == 1)
-    @if($content->meta_title)
-        @section('meta_title', $content->meta_title)
-    @endif
-    @if($content->meta_description)
-        @section('description', $content->meta_description)
-    @endif
-    @if($content->meta_keywords)
-        @section('meta_title', $content->meta_keywords)
-    @endif
-@endif
-@if($content->tab_title)
-    @section('title', $content->tab_title)
-@endif
 
 @section('content')
 
@@ -28,9 +14,11 @@
             <div class="blog-posts-item">
                 <i class="far fa-comment"></i>
                 <div class="blog-posts-item__text">
-                    <h4 class=blog-posts-item__text-title">
-                        {{$post->title}}
-                    </h4>
+                    <a href="{{route('post.show', [$post->id])}}">
+                        <h4 class=blog-posts-item__text-title">
+                            {{$post->title}}
+                        </h4>
+                    </a>
                     {{$post->content}}
                 </div>
             </div>

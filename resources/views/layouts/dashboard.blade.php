@@ -9,19 +9,24 @@
         <div class="dashboard-info">
             <div class="dashboard-info-sec">
                 Welcome Back<br/>
+                <span class="number">
                 {{Auth::user()->fname}} {{Auth::user()->surname}}
+                </span>
             </div>
             <div class="dashboard-info-sec">
                 <p class="dashboard-info-sec__text">
                     <span>Since you last visit there has been</span>
-                    <span>Number</span>
+                    <span class="number">{{$visCount}}</span>
                     <span>New Visitors</span>
                 </p>
             </div>
+            @foreach($visitors as $visitor)
+            @dd($visitor)
+            @endforeach
             <div class="dashboard-info-sec">
                 <p class="dashboard-info-sec__text">
                     <span>Since you last visit there has been</span>
-                    <span>Number</span>
+                    <span class="number">Number</span>
                     <span>New Purchases??</span>
                 </p>
             </div>

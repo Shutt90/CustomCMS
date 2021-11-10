@@ -17,8 +17,11 @@ class postController extends Controller
      */
     public function index()
     {
+
+        $posts = Post::orderBy('id', 'desc')->with('user')->paginate(10);
+
         return view('front.blog', [
-            'posts' => Post::orderBy('id', 'desc')->with('user')->get(),
+            'posts' => $posts
         ]);
     }
 
@@ -64,8 +67,10 @@ class postController extends Controller
     public function show(int $id)
     {
 
+        $post = Post::findOrFail($id);
+
         return view('front.posts', [
-            'post' => Post::findOrFail($id),
+            'post' => $post->with('visits')->get(),
         ]);
         
     }

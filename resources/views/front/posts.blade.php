@@ -2,7 +2,7 @@
 
 @include('layouts.sidenav')
 
-@section('title', 'Viewing Posts')
+@section('title', $post->title)
 
 @section('content')
 

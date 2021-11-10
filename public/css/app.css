@@ -10199,6 +10199,9 @@ body {
 .dashboard-title {
   width: 400px;
 }
+.dashboard-info .number {
+  font-size: 2rem;
+}
 .dashboard-info-sec {
   display: flex;
   justify-content: center;
