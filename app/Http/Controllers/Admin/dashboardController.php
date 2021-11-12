@@ -14,10 +14,8 @@ class dashboardController extends Controller
 
         $posts = Post::orderBy('id', 'desc')->with('user')->limit(5)->get();
         
-        return view('layouts.dashboard', [
+        return view('front.dashboard', [
             'posts' => $posts,
-            'visitors' => $visitors,
-            'visCount' => $visCount,
         ]);
     }
 
