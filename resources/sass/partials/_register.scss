@@ -1,5 +1,7 @@
 body {
-    background-color: $shade1;
+    background: rgb(174,186,238);
+    background: radial-gradient(circle, rgba(174,186,238,1) 50%, rgba(43,159,56,1) 100%);
+    background-size: 100%;
     font-family: 'Permanent Marker', cursive;
 }
 
